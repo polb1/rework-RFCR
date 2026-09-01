@@ -100,31 +100,48 @@ export default function Home() {
             <p className={styles.empty}>Encara no hi ha partits programats.</p>
           ) : (
             <div className={styles.calRow}>
-              {upcoming.map(m => (
-                <article key={m.id} className={styles.calCard}>
-                  <Badge variant="primary">{m.round || m.competition}</Badge>
-                  <time className={styles.calDate} dateTime={m.date}>
-                    {formatDateShort(m.date)} · {formatTime(m.date)}
-                  </time>
-                  <div className={styles.calTeams}>
-                    <div className={styles.calTeam}>
-                      <img src={m.home.badge} alt="" />
-                      <span>{m.home.shortName}</span>
+              {upcoming.map(m => {
+                const d = new Date(m.date);
+                const dateLabel = d.toLocaleDateString('ca-ES', { weekday: 'long', day: 'numeric', month: 'short' });
+                const timeLabel = m.time || (d.getHours() ? d.toTimeString().slice(0, 5) : '—:—');
+                return (
+                  <article key={m.id} className={styles.calCard}>
+                    <header className={styles.calHead}>
+                      <span className={styles.calRound}>{m.round || 'Jornada'}</span>
+                      <span className={styles.calComp} title={m.competition} aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"/></svg>
+                      </span>
+                    </header>
+
+                    <div className={styles.calTeams}>
+                      <img src={m.home.badge} alt={m.home.name} className={styles.calBadge} />
+                      <span className={styles.calVs}>VS</span>
+                      <img src={m.away.badge} alt={m.away.name} className={styles.calBadge} />
                     </div>
-                    <span className={styles.calVs}>VS</span>
-                    <div className={styles.calTeam}>
-                      <img src={m.away.badge} alt="" />
-                      <span>{m.away.shortName}</span>
+
+                    <p className={styles.calNames}>
+                      {m.home.name}<br/>{m.away.name}
+                    </p>
+
+                    <div className={styles.calMeta}>
+                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>{dateLabel}</span>
+                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>{timeLabel}</span>
                     </div>
-                  </div>
-                  <p className={styles.calVenue}>{m.venue}</p>
-                  {m.ticketsUrl && (
-                    <a href={m.ticketsUrl} target="_blank" rel="noopener noreferrer" className={styles.calCta}>
-                      Comprar entrada →
-                    </a>
-                  )}
-                </article>
-              ))}
+                    <p className={styles.calVenue}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      {m.venue}
+                    </p>
+
+                    {m.ticketsUrl ? (
+                      <a href={m.ticketsUrl} target="_blank" rel="noopener noreferrer" className={styles.calCta}>
+                        Entrades
+                      </a>
+                    ) : (
+                      <button className={styles.calCtaDisabled} disabled>Entrades</button>
+                    )}
+                  </article>
+                );
+              })}
             </div>
           )}
         </div>
