@@ -4,6 +4,9 @@ import { getStoredToken, setStoredToken, parseJwt, isExpired, renderGoogleButton
 import NewsEditor from './editors/NewsEditor.jsx';
 import PlayersEditor from './editors/PlayersEditor.jsx';
 import ProductsEditor from './editors/ProductsEditor.jsx';
+import SponsorsEditor from './editors/SponsorsEditor.jsx';
+import BoardEditor from './editors/BoardEditor.jsx';
+import HistoryEditor from './editors/HistoryEditor.jsx';
 import GenericJsonEditor from './editors/GenericJsonEditor.jsx';
 import styles from './Admin.module.css';
 
@@ -78,11 +81,11 @@ export default function Admin() {
           <Route path="/news" element={<NewsEditor token={token} />} />
           <Route path="/players" element={<PlayersEditor token={token} />} />
           <Route path="/products" element={<ProductsEditor token={token} />} />
-          <Route path="/sponsors" element={<GenericJsonEditor token={token} file="sponsors.json" title="Patrocinadors" />} />
+          <Route path="/sponsors" element={<SponsorsEditor token={token} />} />
           <Route path="/matches" element={<GenericJsonEditor token={token} file="matches.json" title="Partits" />} />
           <Route path="/standings" element={<GenericJsonEditor token={token} file="standings.json" title="Classificació" />} />
-          <Route path="/board" element={<GenericJsonEditor token={token} file="board.json" title="Directiva" />} />
-          <Route path="/history" element={<GenericJsonEditor token={token} file="history.json" title="Història" />} />
+          <Route path="/board" element={<BoardEditor token={token} />} />
+          <Route path="/history" element={<HistoryEditor token={token} />} />
           <Route path="*" element={<Navigate to="/admin/news" replace />} />
         </Routes>
       </main>
