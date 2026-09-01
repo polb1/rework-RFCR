@@ -1,8 +1,8 @@
 [
-  { "id": "pr01", "slug": "equipacio-primera-25-26", "name": "Equipació primera 25-26", "price": 65, "image": "/assets/shop/placeholder.webp", "category": "equipacio" },
-  { "id": "pr02", "slug": "equipacio-segona-25-26", "name": "Equipació segona 25-26",   "price": 65, "image": "/assets/shop/placeholder.webp", "category": "equipacio" },
-  { "id": "pr03", "slug": "polo-oficial",           "name": "Polo oficial",             "price": 35, "image": "/assets/shop/placeholder.webp", "category": "roba" },
-  { "id": "pr04", "slug": "bufanda-classica",       "name": "Bufanda clàssica",         "price": 15, "image": "/assets/shop/placeholder.webp", "category": "accessoris" },
-  { "id": "pr05", "slug": "gorra-club",             "name": "Gorra del club",           "price": 20, "image": "/assets/shop/placeholder.webp", "category": "accessoris" },
-  { "id": "pr06", "slug": "xandall-entrenament",    "name": "Xandall d'entrenament",    "price": 85, "image": "/assets/shop/placeholder.webp", "category": "roba" }
+  { "id": "pr01", "slug": "equipacio-primera-25-26", "name": "Equipació primera 25-26", "price": 65, "image": "/assets/shop/placeholder.svg", "category": "equipacio" },
+  { "id": "pr02", "slug": "equipacio-segona-25-26", "name": "Equipació segona 25-26",   "price": 65, "image": "/assets/shop/placeholder.svg", "category": "equipacio" },
+  { "id": "pr03", "slug": "polo-oficial",           "name": "Polo oficial",             "price": 35, "image": "/assets/shop/placeholder.svg", "category": "roba" },
+  { "id": "pr04", "slug": "bufanda-classica",       "name": "Bufanda clàssica",         "price": 15, "image": "/assets/shop/placeholder.svg", "category": "accessoris" },
+  { "id": "pr05", "slug": "gorra-club",             "name": "Gorra del club",           "price": 20, "image": "/assets/shop/placeholder.svg", "category": "accessoris" },
+  { "id": "pr06", "slug": "xandall-entrenament",    "name": "Xandall d'entrenament",    "price": 85, "image": "/assets/shop/placeholder.svg", "category": "roba" }
 ]

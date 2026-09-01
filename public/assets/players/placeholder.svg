@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="Jugador">
+  <rect width="200" height="240" fill="#1A1A1A"/>
+  <circle cx="100" cy="90" r="34" fill="#C8102E"/>
+  <path d="M40 240 C40 170 160 170 160 240 Z" fill="#C8102E"/>
+  <text x="100" y="220" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="18" fill="#fff">RFCR</text>
+</svg>

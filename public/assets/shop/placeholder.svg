@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Producte">
+  <rect width="300" height="300" fill="#F5F5F5"/>
+  <path d="M90 90 L150 60 L210 90 L230 100 L215 130 L200 125 V240 H100 V125 L85 130 L70 100 Z" fill="#C8102E" stroke="#1A1A1A" stroke-width="3"/>
+</svg>
