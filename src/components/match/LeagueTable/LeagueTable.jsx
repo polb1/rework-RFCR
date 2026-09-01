@@ -17,7 +17,12 @@ export default function LeagueTable({ rows, compact = false }) {
           {rows.map(r => (
             <tr key={r.position} className={r.isSelf ? styles.self : ''}>
               <td className={styles.narrow}>{r.position}</td>
-              <td className={styles.team}>{r.team}</td>
+              <td className={styles.team}>
+                <span className={styles.teamCell}>
+                  {r.badge && <img src={r.badge} alt="" className={styles.badge} loading="lazy" />}
+                  <span>{r.team}</span>
+                </span>
+              </td>
               <td>{r.played}</td>
               {!compact && <><td>{r.wins}</td><td>{r.draws}</td><td>{r.losses}</td><td>{r.gf}</td><td>{r.ga}</td></>}
               <td className={styles.points}>{r.points}</td>
