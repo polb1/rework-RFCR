@@ -23,6 +23,7 @@
 }
 
 .heroText { max-width: 520px; }
+.heroBadge { width: 96px; height: 96px; object-fit: contain; margin-bottom: var(--space-6); filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5)); }
 .eyebrow {
   display: inline-block;
   font-family: var(--font-primary);

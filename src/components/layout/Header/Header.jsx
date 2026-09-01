@@ -18,8 +18,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo} aria-label="Reus FC Reddis — inici">
-          <span className={styles.logoMark}>RFCR</span>
-          <span className={styles.logoText}>Reus FC Reddis</span>
+          <img src="/assets/badges/rfcr.webp" alt="" className={styles.logoBadge} />
+          <img src="/assets/badges/logo-horizontal.webp" alt="Reus FC Reddis" className={styles.logoWordmark} />
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Navegació principal">

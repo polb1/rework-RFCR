@@ -8,9 +8,8 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <span className={styles.logoMark}>RFCR</span>
-          <p className={styles.brandName}>Reus FC Reddis</p>
-          <p className={styles.tagline}>Orgullosos dels colors.</p>
+          <img src="/assets/badges/rfcr.webp" alt="Reus FC Reddis" className={styles.brandBadge} />
+          <p className={styles.tagline}>Orgullosos dels colors fins a morir.</p>
         </div>
 
         <FooterCol title="Navegació" items={mainNav} />

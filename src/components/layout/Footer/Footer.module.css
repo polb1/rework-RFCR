@@ -19,26 +19,9 @@
   .grid { grid-template-columns: 1.4fr repeat(4, 1fr); }
 }
 
-.brand { display: flex; flex-direction: column; gap: var(--space-2); }
-.logoMark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  background: var(--color-primary);
-  font-family: var(--font-display);
-  font-weight: 800;
-  border-radius: var(--radius-sm);
-}
-.brandName {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-top: var(--space-2);
-}
-.tagline { color: #9ca3af; font-size: var(--text-sm); }
+.brand { display: flex; flex-direction: column; gap: var(--space-3); }
+.brandBadge { width: 88px; height: 88px; object-fit: contain; }
+.tagline { color: #9ca3af; font-size: var(--text-sm); max-width: 240px; }
 
 .col { min-width: 0; }
 .colTitle {

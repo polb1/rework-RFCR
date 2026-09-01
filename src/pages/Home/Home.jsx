@@ -28,6 +28,7 @@ export default function Home() {
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroText}>
+            <img src="/assets/badges/rfcr.webp" alt="" className={styles.heroBadge} />
             <span className={styles.eyebrow}>{club.competition} · {club.group}</span>
             <h1 className={styles.heroTitle}>Reus <span>FC</span> Reddis</h1>
             <p className={styles.heroSub}>
