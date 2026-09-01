@@ -4,7 +4,12 @@ import { saveJson, download } from './shared.js';
 import s from './editor.module.css';
 
 const POSITIONS = ['Porter', 'Defensa', 'Migcampista', 'Davanter'];
-const EMPTY = { id: '', slug: '', name: '', number: 0, position: 'Migcampista', photo: '/assets/players/placeholder.svg', birthYear: 2000, nationality: 'ES' };
+const EMPTY = {
+  id: '', slug: '', name: '', shortName: '', number: 0, position: 'Migcampista',
+  photo: '/assets/players/placeholder.svg', birthYear: 2000, nationality: 'ES',
+  height: null, weight: null, birthplace: '', foot: '', fullBirthdate: '', positionDetail: '',
+};
+const FEET = ['', 'Dretà', 'Esquerrà', 'Ambidextre'];
 
 export default function PlayersEditor({ token }) {
   const [items, setItems] = useState(initial);
@@ -57,7 +62,8 @@ export default function PlayersEditor({ token }) {
         <div className={s.form}>
           <div className={s.field}><label>ID</label><input value={editing.id} onChange={e => setEditing({ ...editing, id: e.target.value })} /></div>
           <div className={s.field}><label>Slug</label><input value={editing.slug} onChange={e => setEditing({ ...editing, slug: e.target.value })} /></div>
-          <div className={s.field}><label>Nom</label><input value={editing.name} onChange={e => setEditing({ ...editing, name: e.target.value })} /></div>
+          <div className={s.field}><label>Nom complet</label><input value={editing.name} onChange={e => setEditing({ ...editing, name: e.target.value })} /></div>
+          <div className={s.field}><label>Nom curt (carrusel)</label><input value={editing.shortName || ''} onChange={e => setEditing({ ...editing, shortName: e.target.value })} placeholder="CASALS" /></div>
           <div className={s.field}><label>Dorsal</label><input type="number" value={editing.number} onChange={e => setEditing({ ...editing, number: +e.target.value })} /></div>
           <div className={s.field}>
             <label>Posició</label>
@@ -65,9 +71,20 @@ export default function PlayersEditor({ token }) {
               {POSITIONS.map(p => <option key={p}>{p}</option>)}
             </select>
           </div>
+          <div className={s.field}><label>Posició detallada</label><input value={editing.positionDetail || ''} onChange={e => setEditing({ ...editing, positionDetail: e.target.value })} placeholder="Lateral, Extrem, Central…" /></div>
           <div className={s.field}><label>Any naixement</label><input type="number" value={editing.birthYear} onChange={e => setEditing({ ...editing, birthYear: +e.target.value })} /></div>
+          <div className={s.field}><label>Data naixement</label><input type="date" value={editing.fullBirthdate || ''} onChange={e => setEditing({ ...editing, fullBirthdate: e.target.value })} /></div>
           <div className={s.field}><label>Nacionalitat (ISO)</label><input value={editing.nationality} onChange={e => setEditing({ ...editing, nationality: e.target.value })} /></div>
-          <div className={`${s.field} ${s.wide}`}><label>Foto (ruta)</label><input value={editing.photo} onChange={e => setEditing({ ...editing, photo: e.target.value })} /></div>
+          <div className={s.field}><label>Nascut a</label><input value={editing.birthplace || ''} onChange={e => setEditing({ ...editing, birthplace: e.target.value })} /></div>
+          <div className={s.field}><label>Alçada (cm)</label><input type="number" value={editing.height || ''} onChange={e => setEditing({ ...editing, height: e.target.value ? +e.target.value : null })} /></div>
+          <div className={s.field}><label>Pes (kg)</label><input type="number" value={editing.weight || ''} onChange={e => setEditing({ ...editing, weight: e.target.value ? +e.target.value : null })} /></div>
+          <div className={s.field}>
+            <label>Cama</label>
+            <select value={editing.foot || ''} onChange={e => setEditing({ ...editing, foot: e.target.value })}>
+              {FEET.map(f => <option key={f} value={f}>{f || '—'}</option>)}
+            </select>
+          </div>
+          <div className={`${s.field} ${s.wide}`}><label>Foto (ruta) — recomana PNG amb fons transparent</label><input value={editing.photo} onChange={e => setEditing({ ...editing, photo: e.target.value })} /></div>
           <div className={`${s.field} ${s.wide} ${s.actions}`}>
             <button className={s.btn} onClick={cancel}>Cancel·lar</button>
             <button className={`${s.btn} ${s.primary}`} onClick={saveItem}>Aplicar</button>
