@@ -7,7 +7,12 @@
     "date": "2026-07-30",
     "category": "Primer equip",
     "image": "/assets/news/costenic-2026-27.webp",
-    "author": "Redacció RFCR"
+    "author": "Redacció RFCR",
+    "body": [
+      "El Reus FC Reddis ha fet oficial aquest matí la composició del cos tècnic que acompanyarà l'entrenador Edu Albacar al llarg de la temporada 2026/27. Es tracta d'una estructura multidisciplinària formada per professionals amb dilatada experiència al futbol formatiu i professional.",
+      "L'objectiu del club és consolidar un projecte esportiu ambiciós, coherent amb la filosofia roig-i-negra i alineat amb el creixement del futbol base. El nou staff combina veterans amb noves incorporacions en àrees com preparació física, anàlisi tàctica, porteria i rehabilitació.",
+      "El primer equip començarà la pretemporada la setmana vinent amb els reconeixements mèdics i les proves físiques inicials abans de començar els entrenaments al Municipal."
+    ]
   },
   {
     "id": "n02",
@@ -17,7 +22,11 @@
     "date": "2026-04-20",
     "category": "Club",
     "image": "/assets/news/firma-asco.webp",
-    "author": "Redacció RFCR"
+    "author": "Redacció RFCR",
+    "body": [
+      "El Reus FC Reddis i l'Ascó FC han segellat un acord de col·laboració estratègica que reforça els llaços entre dos clubs històrics de les comarques tarragonines. L'acord contempla la cessió de jugadors, l'intercanvi de metodologies i la coordinació de treballs conjunts en categories inferiors.",
+      "La signatura, celebrada a la seu del Reus FC Reddis, remarca la voluntat d'ambdues entitats d'apostar pel talent local i oferir més oportunitats als joves futbolistes del territori."
+    ]
   },
   {
     "id": "n03",
@@ -27,7 +36,12 @@
     "date": "2025-11-26",
     "category": "Botiga",
     "image": "/assets/news/samarreta-gaudi.jpeg",
-    "author": "Redacció RFCR"
+    "author": "Redacció RFCR",
+    "body": [
+      "La nova samarreta commemorativa del centenari, presentada aquest dimecres al Gaudí Centre, s'inspira en el trencadís modernista i homenatja la figura d'Antoni Gaudí, il·lustre reusenc.",
+      "Disponible en edició limitada a la botiga oficial del club, l'equipació combina el roig i el negre tradicionals amb tessel·les de colors trencats i un escut brodat commemoratiu.",
+      "Els abonats disposaran d'un període de reserva prioritària abans que la samarreta arribi al públic general."
+    ]
   },
   {
     "id": "n04",
@@ -37,7 +51,11 @@
     "date": "2025-10-08",
     "category": "Patrocinadors",
     "image": "/assets/news/kosner.webp",
-    "author": "Àrea comercial"
+    "author": "Àrea comercial",
+    "body": [
+      "El Reus FC Reddis ha incorporat Kosner com a nou patrocinador oficial per a la temporada 2025-26. La companyia s'afegeix a la llista de socis comercials del club, consolidant una xarxa de suport local que creix any rere any.",
+      "L'acord contempla la presència de la marca a l'equipació de joc, al Municipal i als canals digitals del club."
+    ]
   },
   {
     "id": "n05",
@@ -47,7 +65,11 @@
     "date": "2025-09-22",
     "category": "Primer equip",
     "image": "/assets/news/copa-del-rey.webp",
-    "author": "Redacció RFCR"
+    "author": "Redacció RFCR",
+    "body": [
+      "El sorteig de la Copa del Rei ha aparellat el Reus FC Reddis amb el CE Europa a la primera eliminatòria del torneig del KO. El partit es disputarà al Municipal amb entrada única per a soci i aficionat.",
+      "Serà un dels partits més esperats de la temporada i el club espera omplir la graderia per empènyer el primer equip en aquesta cita històrica."
+    ]
   },
   {
     "id": "n06",
@@ -57,6 +79,10 @@
     "date": "2026-07-15",
     "category": "Socis",
     "image": "/assets/news/dsc00282.webp",
-    "author": "Àrea social"
+    "author": "Àrea social",
+    "body": [
+      "S'obre oficialment el procés de pre-reserva d'abonaments per a la temporada 2026/27. Els abonats de la temporada anterior tindran prioritat per renovar el seu seient fins al 15 d'agost.",
+      "Un cop finalitzat aquest període, la resta de localitats es posaran a la venda per al públic general. El club recorda els avantatges de ser soci: descomptes a la botiga, accés prioritari a Copa del Rei i esdeveniments exclusius."
+    ]
   }
 ]

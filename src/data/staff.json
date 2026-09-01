@@ -1,0 +1,10 @@
+{
+  "coach": {
+    "name": "Edu Albacar",
+    "role": "Primer entrenador",
+    "nationality": "ES",
+    "contractSince": "2026-07-01",
+    "contractUntil": "2027-06-30",
+    "photo": "/assets/players/placeholder.svg"
+  }
+}
