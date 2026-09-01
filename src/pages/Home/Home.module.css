@@ -1,0 +1,17 @@
+.home {
+  padding-block: var(--space-24);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--text-5xl);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
