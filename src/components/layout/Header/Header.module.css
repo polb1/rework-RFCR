@@ -121,17 +121,29 @@
 .ctaSecondary { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
 .ctaSecondary:hover { border-color: #fff; color: #fff; }
 
+/* En mobil (< 1024) amaguem els CTAs del header — nomes es veuen dins el drawer */
+@media (max-width: 1023px) {
+  .actions .cta { display: none; }
+}
+
 .burger {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 32px;
-  height: 24px;
-  padding: 3px 0;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px 6px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  flex-shrink: 0;
 }
+.burger:active { background: rgba(255,255,255,0.08); }
 .burger span {
   display: block;
-  height: 3px;
+  width: 100%;
+  height: 2.5px;
   background: #fff;
   border-radius: 2px;
 }
@@ -139,13 +151,16 @@
 .drawer {
   position: fixed;
   inset: 72px 0 0 auto;
-  width: min(320px, 85vw);
+  width: min(360px, 90vw);
+  max-height: calc(100dvh - 72px);
   background: var(--color-secondary);
   color: #fff;
   padding: var(--space-6);
   transform: translateX(100%);
   transition: transform .25s ease;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   z-index: 60;
 }
 .drawerOpen { transform: translateX(0); }
