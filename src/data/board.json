@@ -1,0 +1,10 @@
+[
+  { "name": "Xavier Roig",     "role": "President" },
+  { "name": "Junta Directiva", "role": "Vicepresidència" },
+  { "name": "Junta Directiva", "role": "Tresoreria" },
+  { "name": "Junta Directiva", "role": "Secretaria" },
+  { "name": "Àrea Esportiva",  "role": "Direcció esportiva" },
+  { "name": "Àrea Comercial",  "role": "Direcció comercial" },
+  { "name": "Àrea Social",     "role": "Àrea social i abonats" },
+  { "name": "Àrea Comunicació","role": "Comunicació i premsa" }
+]

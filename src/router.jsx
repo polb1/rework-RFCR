@@ -9,6 +9,11 @@ import News from './pages/News/News.jsx';
 import NewsDetail from './pages/NewsDetail/NewsDetail.jsx';
 import Team from './pages/Team/Team.jsx';
 import PlayerDetail from './pages/PlayerDetail/PlayerDetail.jsx';
+import Stadium from './pages/Stadium/Stadium.jsx';
+import History from './pages/History/History.jsx';
+import Board from './pages/Board/Board.jsx';
+import Sponsors from './pages/Sponsors/Sponsors.jsx';
+import Contact from './pages/Contact/Contact.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 
 export const router = createBrowserRouter([
@@ -24,6 +29,11 @@ export const router = createBrowserRouter([
       { path: '/actualitat/:slug', element: <NewsDetail /> },
       { path: '/equip', element: <Team /> },
       { path: '/equip/:slug', element: <PlayerDetail /> },
+      { path: '/estadi', element: <Stadium /> },
+      { path: '/historia', element: <History /> },
+      { path: '/directiva', element: <Board /> },
+      { path: '/patrocinadors', element: <Sponsors /> },
+      { path: '/contacte', element: <Contact /> },
       { path: '*', element: <NotFound /> },
     ],
   },

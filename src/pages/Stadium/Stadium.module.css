@@ -1,0 +1,31 @@
+.page { padding-bottom: var(--space-16); }
+
+.hero { position: relative; height: min(60vh, 520px); overflow: hidden; background: var(--color-bg-dark); }
+.heroImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.heroOverlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(13,13,13,0.85)); }
+.heroInner {
+  position: relative; height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-3);
+  padding-block: var(--space-8);
+  color: var(--color-text-on-dark);
+}
+.title { font-size: clamp(var(--text-4xl), 6vw, var(--text-5xl)); color: var(--color-text-on-dark); margin: 0; text-transform: uppercase; }
+.sub { color: var(--color-text-on-dark); opacity: 0.85; }
+
+.stats {
+  margin-top: -60px;
+  position: relative; z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+}
+.stats > div { border-left: 3px solid var(--color-primary); padding-left: var(--space-3); }
+.stats dt { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); }
+.stats dd { font-size: var(--text-2xl); font-weight: 700; margin: 0; }
+
+.body { max-width: 760px; margin-top: var(--space-12); display: flex; flex-direction: column; gap: var(--space-4); font-size: var(--text-base); line-height: 1.75; }
