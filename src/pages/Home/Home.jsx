@@ -14,7 +14,6 @@ import MatchCard from '../../components/match/MatchCard/MatchCard.jsx';
 import LeagueTable from '../../components/match/LeagueTable/LeagueTable.jsx';
 import SponsorGrid from '../../components/sponsors/SponsorGrid/SponsorGrid.jsx';
 import Seo from '../../components/ui/Seo/Seo.jsx';
-import { useLive } from '../../lib/useLive.js';
 import { formatDateShort, formatTime } from '../../utils/dates.js';
 
 import styles from './Home.module.css';
@@ -40,20 +39,11 @@ const FEATURE_TILES = [
 
 export default function Home() {
   const now = Date.now();
-  const staticNext = matches.find(m => m.status === 'scheduled' && new Date(m.date).getTime() >= now)
+  const nextMatch = matches.find(m => m.status === 'scheduled' && new Date(m.date).getTime() >= now)
     || matches.find(m => m.status === 'scheduled');
-  const { data: nextMatch } = useLive('next', staticNext);
-  const { data: liveMatch } = useLive('live', null, 30_000);
-  const { data: recentResults } = useLive(
-    'last',
-    matches.filter(m => m.status === 'played').slice(-3).reverse()
-  );
-  const { data: liveStandings } = useLive('standings', standings);
-
+  const recentResults = matches.filter(m => m.status === 'played').slice(-3).reverse();
   const upcoming = matches.filter(m => m.status === 'scheduled' && new Date(m.date).getTime() >= now).slice(0, 4);
   const featuredProducts = products.slice(0, 4);
-  const heroMatch = liveMatch || nextMatch;
-  const rowsToShow = Array.isArray(recentResults) ? recentResults.slice(0, 3) : [];
 
   return (
     <>
@@ -69,7 +59,7 @@ export default function Home() {
             <p className={styles.heroSub}>Orgullosos dels colors, temporada {club.season}.</p>
           </div>
           <div className={styles.heroMatch}>
-            <NextMatch match={heroMatch} />
+            <NextMatch match={nextMatch} />
           </div>
         </div>
       </section>
@@ -84,7 +74,7 @@ export default function Home() {
               action={<Button as={Link} to="/resultats" variant="outline" size="sm">Tots els resultats</Button>}
             />
             <div className={styles.results}>
-              {rowsToShow.map(m => <MatchCard key={m.id} match={m} />)}
+              {recentResults.map(m => <MatchCard key={m.id} match={m} />)}
             </div>
           </div>
           <div>
@@ -93,7 +83,7 @@ export default function Home() {
               title={club.group}
               action={<Button as={Link} to="/classificacio" variant="outline" size="sm">Taula completa</Button>}
             />
-            <LeagueTable rows={liveStandings || standings} compact />
+            <LeagueTable rows={standings} compact />
           </div>
         </div>
       </section>
