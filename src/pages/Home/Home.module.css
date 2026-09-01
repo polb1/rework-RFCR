@@ -185,19 +185,22 @@
   display: block;
   color: inherit;
   text-decoration: none;
-  transition: transform .3s;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+  position: relative;
+  z-index: 1;
+  transform-origin: center bottom;
 }
-.featTile:hover { transform: translateY(-6px); }
+.featTile:hover,
+.featTile:focus-visible {
+  transform: scale(1.08) translateY(-6px);
+  z-index: 3;
+}
 .featImgWrap {
   position: relative;
   aspect-ratio: 3 / 5;
-  min-height: 260px;
   overflow: hidden;
   background: #000;
   border-radius: var(--radius-md);
-}
-@media (min-width: 1024px) {
-  .featImgWrap { min-height: 380px; aspect-ratio: 3 / 5; }
 }
 .featImg {
   width: 100%; height: 100%;
