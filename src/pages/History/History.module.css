@@ -45,7 +45,7 @@
   height: 100%;
 }
 @media (max-width: 560px) {
-  .entries { padding-left: 140px; }
+  .entries { padding-left: 110px; }
 }
 
 .entry {
@@ -55,6 +55,10 @@
   opacity: 0.35;
   transform: translateX(-8px);
   transition: opacity .4s, transform .4s;
+  padding-right: var(--space-2);
+}
+@media (max-width: 560px) {
+  .entry { left: 110px; }
 }
 .entryActive {
   opacity: 1;
