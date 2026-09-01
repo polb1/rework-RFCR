@@ -10,9 +10,11 @@
 .inner {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-3);
   min-height: 72px;
+  min-width: 0;
 }
+@media (min-width: 640px) { .inner { gap: var(--space-6); } }
 
 .logo {
   display: flex;

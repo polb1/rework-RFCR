@@ -125,8 +125,10 @@
 .stats dt {
   font-weight: 700;
   color: var(--color-text);
-  min-width: 140px;
+  min-width: 100px;
+  flex-shrink: 0;
 }
+@media (min-width: 640px) { .stats dt { min-width: 140px; } }
 .stats dd { margin: 0; color: var(--color-text); }
 
 .controls {
