@@ -1,0 +1,28 @@
+.page { padding-block: var(--space-12); }
+
+.pageTitle {
+  font-size: var(--text-4xl);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: var(--space-12);
+}
+
+.section {
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+.section:first-of-type { border-top: 0; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
