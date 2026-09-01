@@ -1,5 +1,27 @@
 .page { padding-block: var(--space-12); }
-.head { margin-bottom: var(--space-12); }
+.head { padding-top: var(--space-12); margin-bottom: var(--space-8); }
+.groupsWrap { padding-bottom: var(--space-16); }
+
+.gallerySection {
+  position: relative;
+  height: min(70vh, 620px);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-dark) 100%);
+  margin-block: var(--space-8);
+  overflow: hidden;
+}
+.galleryHint {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 0; right: 0;
+  text-align: center;
+  color: var(--color-text-on-dark);
+  opacity: 0.6;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  margin: 0;
+}
 .title {
   font-size: var(--text-5xl);
   color: var(--color-primary);
