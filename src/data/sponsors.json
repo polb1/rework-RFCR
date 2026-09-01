@@ -1,10 +1,16 @@
 [
-  { "name": "Patrocinador Principal",  "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "principal" },
-  { "name": "Patrocinador Or 1",       "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "or" },
-  { "name": "Patrocinador Or 2",       "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "or" },
-  { "name": "Patrocinador Plata 1",    "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
-  { "name": "Patrocinador Plata 2",    "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
-  { "name": "Patrocinador Plata 3",    "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
-  { "name": "Col·laborador 1",         "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" },
-  { "name": "Col·laborador 2",         "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" }
+  { "name": "Vermuts Miró",         "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "principal" },
+  { "name": "Hummel",               "logo": "/assets/sponsors/placeholder.webp", "url": "https://www.hummel.es/", "tier": "principal" },
+  { "name": "Ajuntament de Reus",   "logo": "/assets/sponsors/ajuntament-reus.webp", "url": "https://www.reus.cat/", "tier": "or" },
+  { "name": "Diputació de Tarragona","logo": "/assets/sponsors/placeholder.webp", "url": "https://www.dipta.cat/", "tier": "or" },
+  { "name": "Grup Oliva Motor",     "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "or" },
+  { "name": "Kosner",               "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "or" },
+  { "name": "Fermator",             "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "4R Hotels",            "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "Reus eSport",          "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "Transpais",            "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "Solargest",            "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" },
+  { "name": "Vissegur",             "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" },
+  { "name": "Cold2Sport",           "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" },
+  { "name": "Mare Nostrum Cup",     "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" }
 ]

@@ -3,12 +3,19 @@
   "shortName": "RFCR",
   "founded": 2020,
   "colors": ["#C8102E", "#1A1A1A"],
+  "badge": "/assets/badges/rfcr.webp",
   "stadium": {
     "name": "Estadi Municipal de Reus",
     "capacity": 4700,
-    "city": "Reus"
+    "city": "Reus",
+    "photo": "/assets/hero/stadium.webp"
   },
   "competition": "Segona Federació",
   "group": "Grup 5",
-  "season": "2025-26"
+  "season": "2026-27",
+  "coach": "Edu Albacar",
+  "heroImages": {
+    "stadium": "/assets/hero/stadium.webp",
+    "aficio": "/assets/hero/aficio.webp"
+  }
 }

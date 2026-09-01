@@ -1,42 +1,62 @@
 [
   {
     "id": "n01",
-    "slug": "victoria-jornada-3",
-    "title": "Victòria contundent a casa contra el Rival C",
-    "excerpt": "L'equip suma tres punts amb una gran actuació davant l'afició al Municipal.",
-    "date": "2025-09-21",
+    "slug": "cos-tecnic-2026-27",
+    "title": "El Reus FC Reddis presenta el cos tècnic del primer equip per a la temporada 2026/27",
+    "excerpt": "Una estructura multidisciplinària de professionals que treballaran conjuntament per donar suport a la plantilla al llarg del nou curs esportiu.",
+    "date": "2026-07-30",
     "category": "Primer equip",
-    "image": "/assets/news/placeholder-1.webp",
+    "image": "/assets/news/costenic-2026-27.webp",
     "author": "Redacció RFCR"
   },
   {
     "id": "n02",
-    "slug": "presentacio-nova-equipacio",
-    "title": "Presentada la nova equipació de la temporada",
-    "excerpt": "Un disseny modern que manté els colors històrics roig-i-negres.",
-    "date": "2025-09-18",
+    "slug": "acord-asco-fc-2026-27",
+    "title": "El Reus FC Reddis i l'Ascó FC arriben a un acord per a la temporada 2026/27",
+    "excerpt": "Els dos clubs signen una col·laboració estratègica per potenciar el futbol formatiu del territori.",
+    "date": "2026-04-20",
     "category": "Club",
-    "image": "/assets/news/placeholder-2.webp",
+    "image": "/assets/news/firma-asco.webp",
     "author": "Redacció RFCR"
   },
   {
     "id": "n03",
-    "slug": "campanya-abonaments",
-    "title": "Oberta la campanya d'abonaments 2025-26",
-    "excerpt": "Descomptes especials per socis històrics i menors de 16 anys.",
-    "date": "2025-09-10",
-    "category": "Socis",
-    "image": "/assets/news/placeholder-3.webp",
-    "author": "Àrea social"
+    "slug": "samarreta-gaudi-centenari",
+    "title": "El Reus FC Reddis presenta la samarreta de Gaudí del centenari inspirada en el trencadís",
+    "excerpt": "Una equipació commemorativa que homenatja el patrimoni modernista de Reus i celebra el centenari.",
+    "date": "2025-11-26",
+    "category": "Botiga",
+    "image": "/assets/news/samarreta-gaudi.jpeg",
+    "author": "Redacció RFCR"
   },
   {
     "id": "n04",
-    "slug": "fitxatge-estel-lar",
-    "title": "L'equip incorpora un nou reforç al mig del camp",
-    "excerpt": "Experiència a Segona Federació i lideratge dins del vestidor.",
-    "date": "2025-08-30",
-    "category": "Fitxatges",
-    "image": "/assets/news/placeholder-4.webp",
+    "slug": "kosner-patrocinador-2025-26",
+    "title": "Kosner s'uneix al Reus FC Reddis com a nou patrocinador oficial",
+    "excerpt": "L'empresa reforça el projecte roig-i-negre com a nou soci comercial per a la temporada 2025-26.",
+    "date": "2025-10-08",
+    "category": "Patrocinadors",
+    "image": "/assets/news/kosner.webp",
+    "author": "Àrea comercial"
+  },
+  {
+    "id": "n05",
+    "slug": "copa-del-rei-ce-europa",
+    "title": "El Reus FC Reddis afronta l'eliminatòria de Copa del Rei davant el CE Europa a casa",
+    "excerpt": "El Municipal serà escenari d'un duel històric contra el CE Europa a la primera eliminatòria del torneig del KO.",
+    "date": "2025-09-22",
+    "category": "Primer equip",
+    "image": "/assets/news/copa-del-rey.webp",
     "author": "Redacció RFCR"
+  },
+  {
+    "id": "n06",
+    "slug": "abonaments-2026-27",
+    "title": "Oberta la pre-reserva dels abonaments per a la temporada 2026/27",
+    "excerpt": "Els abonats de la temporada passada ja poden iniciar el procés de renovació i assegurar el seu lloc al Municipal.",
+    "date": "2026-07-15",
+    "category": "Socis",
+    "image": "/assets/news/dsc00282.webp",
+    "author": "Àrea social"
   }
 ]
