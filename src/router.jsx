@@ -16,6 +16,10 @@ import Sponsors from './pages/Sponsors/Sponsors.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Shop from './pages/Shop/Shop.jsx';
 import ProductDetail from './pages/ProductDetail/ProductDetail.jsx';
+import Fan from './pages/Fan/Fan.jsx';
+import Member from './pages/Member/Member.jsx';
+import Business from './pages/Business/Business.jsx';
+import Legal from './pages/Legal/Legal.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 
 export const router = createBrowserRouter([
@@ -38,6 +42,13 @@ export const router = createBrowserRouter([
       { path: '/contacte', element: <Contact /> },
       { path: '/botiga', element: <Shop /> },
       { path: '/botiga/:slug', element: <ProductDetail /> },
+      { path: '/aficio', element: <Fan /> },
+      { path: '/fes-te-soci', element: <Member /> },
+      { path: '/empresa-roig-i-negra', element: <Business /> },
+      { path: '/avis-legal', element: <Legal page="avis-legal" /> },
+      { path: '/politica-de-privadesa', element: <Legal page="politica-de-privadesa" /> },
+      { path: '/politica-de-cookies', element: <Legal page="politica-de-cookies" /> },
+      { path: '/condicions-de-venda', element: <Legal page="condicions-de-venda" /> },
       { path: '*', element: <NotFound /> },
     ],
   },
