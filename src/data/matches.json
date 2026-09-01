@@ -1,0 +1,68 @@
+[
+  {
+    "id": "j01",
+    "competition": "Segona Federació",
+    "matchday": 1,
+    "date": "2025-09-07T17:00:00+02:00",
+    "venue": "Estadi Municipal de Reus",
+    "isHome": true,
+    "home": { "name": "Reus FC Reddis", "shortName": "RFCR", "badge": "/assets/badges/rfcr.webp" },
+    "away": { "name": "Rival A", "shortName": "RVA", "badge": "/assets/badges/placeholder.webp" },
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "played"
+  },
+  {
+    "id": "j02",
+    "competition": "Segona Federació",
+    "matchday": 2,
+    "date": "2025-09-14T12:00:00+02:00",
+    "venue": "Camp de Rival B",
+    "isHome": false,
+    "home": { "name": "Rival B", "shortName": "RVB", "badge": "/assets/badges/placeholder.webp" },
+    "away": { "name": "Reus FC Reddis", "shortName": "RFCR", "badge": "/assets/badges/rfcr.webp" },
+    "homeScore": 1,
+    "awayScore": 1,
+    "status": "played"
+  },
+  {
+    "id": "j03",
+    "competition": "Segona Federació",
+    "matchday": 3,
+    "date": "2025-09-21T17:00:00+02:00",
+    "venue": "Estadi Municipal de Reus",
+    "isHome": true,
+    "home": { "name": "Reus FC Reddis", "shortName": "RFCR", "badge": "/assets/badges/rfcr.webp" },
+    "away": { "name": "Rival C", "shortName": "RVC", "badge": "/assets/badges/placeholder.webp" },
+    "homeScore": 3,
+    "awayScore": 0,
+    "status": "played"
+  },
+  {
+    "id": "j04",
+    "competition": "Segona Federació",
+    "matchday": 4,
+    "date": "2026-09-07T18:30:00+02:00",
+    "venue": "Estadi Municipal de Reus",
+    "isHome": true,
+    "home": { "name": "Reus FC Reddis", "shortName": "RFCR", "badge": "/assets/badges/rfcr.webp" },
+    "away": { "name": "Rival D", "shortName": "RVD", "badge": "/assets/badges/placeholder.webp" },
+    "homeScore": null,
+    "awayScore": null,
+    "status": "scheduled",
+    "ticketsUrl": "https://reusfcreddis.compralaentrada.com/eventos/"
+  },
+  {
+    "id": "j05",
+    "competition": "Segona Federació",
+    "matchday": 5,
+    "date": "2026-09-14T12:00:00+02:00",
+    "venue": "Camp de Rival E",
+    "isHome": false,
+    "home": { "name": "Rival E", "shortName": "RVE", "badge": "/assets/badges/placeholder.webp" },
+    "away": { "name": "Reus FC Reddis", "shortName": "RFCR", "badge": "/assets/badges/rfcr.webp" },
+    "homeScore": null,
+    "awayScore": null,
+    "status": "scheduled"
+  }
+]

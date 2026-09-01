@@ -1,0 +1,42 @@
+[
+  {
+    "id": "n01",
+    "slug": "victoria-jornada-3",
+    "title": "Victòria contundent a casa contra el Rival C",
+    "excerpt": "L'equip suma tres punts amb una gran actuació davant l'afició al Municipal.",
+    "date": "2025-09-21",
+    "category": "Primer equip",
+    "image": "/assets/news/placeholder-1.webp",
+    "author": "Redacció RFCR"
+  },
+  {
+    "id": "n02",
+    "slug": "presentacio-nova-equipacio",
+    "title": "Presentada la nova equipació de la temporada",
+    "excerpt": "Un disseny modern que manté els colors històrics roig-i-negres.",
+    "date": "2025-09-18",
+    "category": "Club",
+    "image": "/assets/news/placeholder-2.webp",
+    "author": "Redacció RFCR"
+  },
+  {
+    "id": "n03",
+    "slug": "campanya-abonaments",
+    "title": "Oberta la campanya d'abonaments 2025-26",
+    "excerpt": "Descomptes especials per socis històrics i menors de 16 anys.",
+    "date": "2025-09-10",
+    "category": "Socis",
+    "image": "/assets/news/placeholder-3.webp",
+    "author": "Àrea social"
+  },
+  {
+    "id": "n04",
+    "slug": "fitxatge-estel-lar",
+    "title": "L'equip incorpora un nou reforç al mig del camp",
+    "excerpt": "Experiència a Segona Federació i lideratge dins del vestidor.",
+    "date": "2025-08-30",
+    "category": "Fitxatges",
+    "image": "/assets/news/placeholder-4.webp",
+    "author": "Redacció RFCR"
+  }
+]

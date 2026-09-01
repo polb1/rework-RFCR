@@ -1,0 +1,10 @@
+[
+  { "name": "Patrocinador Principal",  "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "principal" },
+  { "name": "Patrocinador Or 1",       "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "or" },
+  { "name": "Patrocinador Or 2",       "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "or" },
+  { "name": "Patrocinador Plata 1",    "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "Patrocinador Plata 2",    "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "Patrocinador Plata 3",    "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "plata" },
+  { "name": "Col·laborador 1",         "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" },
+  { "name": "Col·laborador 2",         "logo": "/assets/sponsors/placeholder.webp", "url": "#", "tier": "colab" }
+]

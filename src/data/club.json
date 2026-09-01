@@ -1,0 +1,14 @@
+{
+  "name": "Reus FC Reddis",
+  "shortName": "RFCR",
+  "founded": 2020,
+  "colors": ["#C8102E", "#1A1A1A"],
+  "stadium": {
+    "name": "Estadi Municipal de Reus",
+    "capacity": 4700,
+    "city": "Reus"
+  },
+  "competition": "Segona Federació",
+  "group": "Grup 5",
+  "season": "2025-26"
+}

@@ -1,0 +1,12 @@
+[
+  { "id": "p01", "slug": "jugador-1",  "name": "Jugador 1",  "number": 1,  "position": "Porter",      "photo": "/assets/players/placeholder.webp", "birthdate": "1998-03-14" },
+  { "id": "p02", "slug": "jugador-2",  "name": "Jugador 2",  "number": 2,  "position": "Defensa",     "photo": "/assets/players/placeholder.webp", "birthdate": "1996-07-22" },
+  { "id": "p03", "slug": "jugador-3",  "name": "Jugador 3",  "number": 4,  "position": "Defensa",     "photo": "/assets/players/placeholder.webp", "birthdate": "1999-11-05" },
+  { "id": "p04", "slug": "jugador-4",  "name": "Jugador 4",  "number": 5,  "position": "Defensa",     "photo": "/assets/players/placeholder.webp", "birthdate": "1995-02-19" },
+  { "id": "p05", "slug": "jugador-5",  "name": "Jugador 5",  "number": 6,  "position": "Migcampista", "photo": "/assets/players/placeholder.webp", "birthdate": "1997-09-30" },
+  { "id": "p06", "slug": "jugador-6",  "name": "Jugador 6",  "number": 8,  "position": "Migcampista", "photo": "/assets/players/placeholder.webp", "birthdate": "2000-01-12" },
+  { "id": "p07", "slug": "jugador-7",  "name": "Jugador 7",  "number": 10, "position": "Migcampista", "photo": "/assets/players/placeholder.webp", "birthdate": "1994-06-08" },
+  { "id": "p08", "slug": "jugador-8",  "name": "Jugador 8",  "number": 7,  "position": "Davanter",    "photo": "/assets/players/placeholder.webp", "birthdate": "1998-12-25" },
+  { "id": "p09", "slug": "jugador-9",  "name": "Jugador 9",  "number": 9,  "position": "Davanter",    "photo": "/assets/players/placeholder.webp", "birthdate": "1996-04-17" },
+  { "id": "p10", "slug": "jugador-10", "name": "Jugador 10", "number": 11, "position": "Davanter",    "photo": "/assets/players/placeholder.webp", "birthdate": "2001-08-03" }
+]
