@@ -196,8 +196,12 @@
 }
 .featTile:hover,
 .featTile:focus-visible {
-  transform: scale(1.05) translateY(-6px);
+  transform: translateY(-8px);
   z-index: 3;
+}
+.featTile:hover .featImgWrap,
+.featTile:focus-visible .featImgWrap {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 .featImgWrap {
   position: relative;
@@ -229,15 +233,22 @@
   min-height: 96px;
   display: flex; flex-direction: column;
   gap: var(--space-2);
+  min-width: 0;
+  overflow: hidden;
 }
 .featLabel {
+  display: block;
   font-family: var(--font-display, inherit);
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.75rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--color-text-on-dark);
   line-height: 1;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .featMore {
   font-size: var(--text-sm);
