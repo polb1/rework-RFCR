@@ -57,14 +57,14 @@ export default function Admin() {
           </div>
         </div>
         <nav className={styles.nav}>
-          <NavLink to="news"     className={({ isActive }) => isActive ? styles.active : ''}>Notícies</NavLink>
-          <NavLink to="players"  className={({ isActive }) => isActive ? styles.active : ''}>Jugadors</NavLink>
-          <NavLink to="products" className={({ isActive }) => isActive ? styles.active : ''}>Productes</NavLink>
-          <NavLink to="sponsors" className={({ isActive }) => isActive ? styles.active : ''}>Patrocinadors</NavLink>
-          <NavLink to="matches"  className={({ isActive }) => isActive ? styles.active : ''}>Partits</NavLink>
-          <NavLink to="standings" className={({ isActive }) => isActive ? styles.active : ''}>Classificació</NavLink>
-          <NavLink to="board"    className={({ isActive }) => isActive ? styles.active : ''}>Directiva</NavLink>
-          <NavLink to="history"  className={({ isActive }) => isActive ? styles.active : ''}>Història</NavLink>
+          <NavLink to="/admin/news"      className={({ isActive }) => isActive ? styles.active : ''}>Notícies</NavLink>
+          <NavLink to="/admin/players"   className={({ isActive }) => isActive ? styles.active : ''}>Jugadors</NavLink>
+          <NavLink to="/admin/products"  className={({ isActive }) => isActive ? styles.active : ''}>Productes</NavLink>
+          <NavLink to="/admin/sponsors"  className={({ isActive }) => isActive ? styles.active : ''}>Patrocinadors</NavLink>
+          <NavLink to="/admin/matches"   className={({ isActive }) => isActive ? styles.active : ''}>Partits</NavLink>
+          <NavLink to="/admin/standings" className={({ isActive }) => isActive ? styles.active : ''}>Classificació</NavLink>
+          <NavLink to="/admin/board"     className={({ isActive }) => isActive ? styles.active : ''}>Directiva</NavLink>
+          <NavLink to="/admin/history"   className={({ isActive }) => isActive ? styles.active : ''}>Història</NavLink>
         </nav>
         <div className={styles.foot}>
           <Link to="/">↗ Veure web</Link>
@@ -74,15 +74,16 @@ export default function Admin() {
 
       <main className={styles.main}>
         <Routes>
-          <Route index element={<Navigate to="news" replace />} />
-          <Route path="news" element={<NewsEditor token={token} />} />
-          <Route path="players" element={<PlayersEditor token={token} />} />
-          <Route path="products" element={<ProductsEditor token={token} />} />
-          <Route path="sponsors" element={<GenericJsonEditor token={token} file="sponsors.json" title="Patrocinadors" fields={['name','logo','url','tier']} />} />
-          <Route path="matches" element={<GenericJsonEditor token={token} file="matches.json" title="Partits" />} />
-          <Route path="standings" element={<GenericJsonEditor token={token} file="standings.json" title="Classificació" />} />
-          <Route path="board" element={<GenericJsonEditor token={token} file="board.json" title="Directiva" fields={['name','role']} />} />
-          <Route path="history" element={<GenericJsonEditor token={token} file="history.json" title="Història" fields={['year','title','text']} />} />
+          <Route path="/" element={<Navigate to="/admin/news" replace />} />
+          <Route path="/news" element={<NewsEditor token={token} />} />
+          <Route path="/players" element={<PlayersEditor token={token} />} />
+          <Route path="/products" element={<ProductsEditor token={token} />} />
+          <Route path="/sponsors" element={<GenericJsonEditor token={token} file="sponsors.json" title="Patrocinadors" />} />
+          <Route path="/matches" element={<GenericJsonEditor token={token} file="matches.json" title="Partits" />} />
+          <Route path="/standings" element={<GenericJsonEditor token={token} file="standings.json" title="Classificació" />} />
+          <Route path="/board" element={<GenericJsonEditor token={token} file="board.json" title="Directiva" />} />
+          <Route path="/history" element={<GenericJsonEditor token={token} file="history.json" title="Història" />} />
+          <Route path="*" element={<Navigate to="/admin/news" replace />} />
         </Routes>
       </main>
     </div>
