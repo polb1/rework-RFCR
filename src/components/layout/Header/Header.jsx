@@ -74,11 +74,29 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <a href={ctas.tickets.href} target="_blank" rel="noopener" className={`${styles.cta} ${styles.ctaPrimary}`}>
-            {ctas.tickets.label}
+          <a
+            href={ctas.tickets.href}
+            target="_blank"
+            rel="noopener"
+            className={`${styles.cta} ${styles.ctaPrimary}`}
+            aria-label={ctas.tickets.label}
+          >
+            <svg className={styles.ctaIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M15 5v2M15 11v2M15 17v2"/>
+              <path d="M4 7a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 000 4v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2a2 2 0 000-4V7z"/>
+            </svg>
+            <span className={styles.ctaLabel}>{ctas.tickets.label}</span>
           </a>
-          <Link to={ctas.member.to} className={`${styles.cta} ${styles.ctaSecondary}`}>
-            {ctas.member.label}
+          <Link
+            to={ctas.member.to}
+            className={`${styles.cta} ${styles.ctaSecondary}`}
+            aria-label={ctas.member.label}
+          >
+            <svg className={styles.ctaIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span className={styles.ctaLabel}>Soci</span>
           </Link>
           <button
             type="button"
