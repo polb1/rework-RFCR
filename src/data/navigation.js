@@ -1,15 +1,20 @@
-export const mainNav = [
+export const primaryNav = [
   { label: 'Inici', to: '/' },
   { label: 'Actualitat', to: '/actualitat' },
   { label: 'Equip', to: '/equip' },
   { label: 'Calendari', to: '/calendari' },
+  { label: 'Botiga', to: '/botiga' },
+];
+
+export const secondaryNav = [
   { label: 'Resultats', to: '/resultats' },
   { label: 'Classificació', to: '/classificacio' },
   { label: 'Afició', to: '/aficio' },
   { label: 'Estadi', to: '/estadi' },
   { label: 'Història', to: '/historia' },
-  { label: 'Botiga', to: '/botiga' },
 ];
+
+export const mainNav = [...primaryNav, ...secondaryNav];
 
 export const ctas = {
   tickets: { label: 'Entrades', href: 'https://reusfcreddis.compralaentrada.com/eventos/' },

@@ -1,30 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { mainNav, ctas } from '../../../data/navigation.js';
+import { primaryNav, secondaryNav, ctas } from '../../../data/navigation.js';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef(null);
   const location = useLocation();
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => { setOpen(false); setMoreOpen(false); }, [location.pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  useEffect(() => {
+    if (!moreOpen) return;
+    const onDoc = (e) => {
+      if (moreRef.current && !moreRef.current.contains(e.target)) setMoreOpen(false);
+    };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, [moreOpen]);
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo} aria-label="Reus FC Reddis — inici">
-          <img src="/assets/badges/rfcr.webp" alt="" className={styles.logoBadge} />
           <img src="/assets/badges/logo-horizontal.webp" alt="Reus FC Reddis" className={styles.logoWordmark} />
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Navegació principal">
           <ul>
-            {mainNav.map(item => (
+            {primaryNav.map(item => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
@@ -35,6 +45,31 @@ export default function Header() {
                 </NavLink>
               </li>
             ))}
+            <li className={styles.moreWrap} ref={moreRef}>
+              <button
+                type="button"
+                className={styles.navLink}
+                aria-haspopup="true"
+                aria-expanded={moreOpen}
+                onClick={() => setMoreOpen(v => !v)}
+              >
+                Més <span aria-hidden="true" className={styles.chev}>▾</span>
+              </button>
+              {moreOpen && (
+                <div className={styles.dropdown} role="menu">
+                  {secondaryNav.map(item => (
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      role="menuitem"
+                      className={({ isActive }) => isActive ? `${styles.dropItem} ${styles.active}` : styles.dropItem}
+                    >
+                      {item.label}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </li>
           </ul>
         </nav>
 
@@ -65,12 +100,23 @@ export default function Header() {
       >
         <nav aria-label="Navegació mòbil">
           <ul className={styles.mobileList}>
-            {mainNav.map(item => (
+            {primaryNav.map(item => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
                   className={({ isActive }) => isActive ? `${styles.mobileLink} ${styles.active}` : styles.mobileLink}
                   end={item.to === '/'}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+            <li className={styles.mobileSep} aria-hidden="true">Més seccions</li>
+            {secondaryNav.map(item => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) => isActive ? `${styles.mobileLink} ${styles.active}` : styles.mobileLink}
                 >
                   {item.label}
                 </NavLink>
