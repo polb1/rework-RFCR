@@ -170,18 +170,19 @@
 /* FEATURE TILES */
 .tilesSection {
   background: var(--color-bg-dark);
-  padding-block: var(--space-12);
+  padding-block: var(--space-16);
   color: var(--color-text-on-dark);
   border-top: 4px solid var(--color-primary);
+  overflow: visible;
 }
 .tilesGrid {
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-6);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
 }
-@media (min-width: 640px) { .tilesGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); } }
-@media (min-width: 1024px) { .tilesGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-6); } }
+@media (min-width: 640px) { .tilesGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8); } }
+@media (min-width: 1024px) { .tilesGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-10, 40px); } }
 .featTile {
   display: block;
   color: inherit;
@@ -195,7 +196,7 @@
 }
 .featTile:hover,
 .featTile:focus-visible {
-  transform: scale(1.08) translateY(-6px);
+  transform: scale(1.05) translateY(-6px);
   z-index: 3;
 }
 .featImgWrap {
@@ -224,8 +225,10 @@
 .featTile:hover .featImg { transform: scale(1.06); filter: brightness(1); }
 .featCap {
   padding-top: var(--space-4);
+  padding-bottom: var(--space-2);
+  min-height: 96px;
   display: flex; flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 .featLabel {
   font-family: var(--font-display, inherit);
