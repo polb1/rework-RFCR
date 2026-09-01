@@ -1,0 +1,72 @@
+.gate {
+  position: fixed; inset: 0;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #1A1A1A, #0D0D0D);
+  color: #fff;
+  padding: 1rem;
+  z-index: 9999;
+}
+.gateBox {
+  max-width: 420px;
+  width: 100%;
+  background: #1F1F1F;
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.gateBox h1 { margin: 0.5rem 0 0; font-size: 1.5rem; }
+.gateBox p { color: #aaa; margin: 0; font-size: 0.9rem; }
+.gateLink { color: #C8102E; text-decoration: none; font-size: 0.85rem; margin-top: 0.5rem; }
+
+.shell {
+  position: fixed; inset: 0;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: #F5F5F5;
+  z-index: 9999;
+  font-family: system-ui, sans-serif;
+}
+@media (max-width: 720px) { .shell { grid-template-columns: 1fr; } }
+
+.sidebar {
+  background: #0D0D0D;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+.brand strong { display: block; font-size: 0.95rem; }
+.brand span { display: block; font-size: 0.75rem; color: #888; }
+
+.nav { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; }
+.nav a {
+  padding: 0.6rem 0.75rem;
+  color: #ccc;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background .12s, color .12s;
+}
+.nav a:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.active { background: #C8102E !important; color: #fff !important; }
+
+.foot { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; }
+.foot a, .foot button {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ccc;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+}
+.foot a:hover, .foot button:hover { background: rgba(255,255,255,0.05); color: #fff; }
+
+.main { overflow-y: auto; padding: 2rem; }

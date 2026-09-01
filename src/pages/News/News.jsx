@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { useNews } from '../../lib/useNews.js';
+import news from '../../data/news.json';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
 import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import Badge from '../../components/ui/Badge/Badge.jsx';
@@ -8,16 +8,15 @@ import styles from './News.module.css';
 
 export default function News() {
   const [category, setCategory] = useState('all');
-  const { data: news, loading } = useNews();
 
   const categories = useMemo(() => {
     const set = new Set(news.map(n => n.category));
     return ['all', ...Array.from(set)];
-  }, [news]);
+  }, []);
 
   const sorted = useMemo(
     () => [...news].sort((a, b) => new Date(b.date) - new Date(a.date)),
-    [news]
+    []
   );
 
   const filtered = category === 'all'
@@ -49,9 +48,7 @@ export default function News() {
 
       <SectionHeader eyebrow="Notícies" title={`${filtered.length} publicacions`} />
 
-      {loading ? (
-        <p className={styles.empty}>Carregant notícies…</p>
-      ) : filtered.length === 0 ? (
+      {filtered.length === 0 ? (
         <p className={styles.empty}>No hi ha notícies d'aquesta categoria.</p>
       ) : (
         <div className={styles.grid}>

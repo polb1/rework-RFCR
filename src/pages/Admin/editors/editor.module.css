@@ -1,0 +1,91 @@
+.page { max-width: 1100px; }
+.head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;
+}
+.head h1 { margin: 0; font-size: 1.5rem; color: #1A1A1A; }
+.head p { margin: 0.25rem 0 0; color: #666; font-size: 0.85rem; }
+
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #D1D5DB;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  color: #1A1A1A;
+}
+.btn:hover { border-color: #C8102E; color: #C8102E; }
+.primary {
+  background: #C8102E;
+  color: #fff;
+  border-color: #C8102E;
+}
+.primary:hover { background: #a00d24; color: #fff; }
+.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.list {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #F3F4F6;
+  align-items: center;
+}
+.row:last-child { border-bottom: none; }
+.row strong { color: #1A1A1A; }
+.row small { color: #6B7280; display: block; font-weight: normal; }
+.rowActions { display: flex; gap: 0.4rem; }
+.iconBtn {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.iconBtn:hover { border-color: #C8102E; color: #C8102E; }
+.danger:hover { border-color: #EF4444; color: #EF4444; }
+
+.form {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field.wide { grid-column: 1 / -1; }
+.field label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280; font-weight: 600; }
+.field input, .field select, .field textarea {
+  padding: 0.55rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #1A1A1A;
+}
+.field textarea { resize: vertical; min-height: 100px; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid #C8102E; border-color: #C8102E; }
+
+.status {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.ok { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+.err { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+
+.hint { color: #6B7280; font-size: 0.85rem; margin: 1rem 0 0; }

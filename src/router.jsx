@@ -21,10 +21,10 @@ import Member from './pages/Member/Member.jsx';
 import Business from './pages/Business/Business.jsx';
 import Legal from './pages/Legal/Legal.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
-import Studio from './pages/Studio/Studio.jsx';
+import Admin from './pages/Admin/Admin.jsx';
 
 export const router = createBrowserRouter([
-  { path: '/studio/*', element: <Studio /> },
+  { path: '/admin/*', element: <Admin /> },
   {
     element: <Layout />,
     children: [
