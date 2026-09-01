@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import products from '../../data/products.json';
 import Badge from '../../components/ui/Badge/Badge.jsx';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 import styles from './Shop.module.css';
 
 const CATEGORY_LABELS = {
@@ -54,6 +55,7 @@ export default function Shop() {
 
   return (
     <main className={`container ${styles.page}`}>
+      <Seo title="Botiga oficial" description="Equipacions, roba i accessoris oficials del Reus FC Reddis." />
       <header className={styles.head}>
         <Badge variant="primary">Botiga</Badge>
         <h1 className={styles.title}>Botiga oficial</h1>

@@ -3,6 +3,7 @@ import news from '../../data/news.json';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
 import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import Badge from '../../components/ui/Badge/Badge.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 import styles from './News.module.css';
 
 export default function News() {
@@ -24,6 +25,7 @@ export default function News() {
 
   return (
     <main className={`container ${styles.page}`}>
+      <Seo title="Actualitat" description="Última hora, notícies i actualitat del Reus FC Reddis." />
       <header className={styles.head}>
         <Badge variant="primary">Notícies</Badge>
         <h1 className={styles.title}>Actualitat</h1>

@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import players from '../../data/players.json';
 import club from '../../data/club.json';
 import Badge from '../../components/ui/Badge/Badge.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 import styles from './PlayerDetail.module.css';
 
 export default function PlayerDetail() {
@@ -18,6 +19,7 @@ export default function PlayerDetail() {
 
   return (
     <main className={styles.page}>
+      <Seo title={p.name} description={`${p.name} · Dorsal ${p.number} · ${p.position} del Reus FC Reddis temporada ${club.season}.`} />
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.photoBox}>

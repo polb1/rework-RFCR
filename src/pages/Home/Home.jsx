@@ -12,8 +12,20 @@ import MatchCard from '../../components/match/MatchCard/MatchCard.jsx';
 import LeagueTable from '../../components/match/LeagueTable/LeagueTable.jsx';
 import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import SponsorGrid from '../../components/sponsors/SponsorGrid/SponsorGrid.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 
 import styles from './Home.module.css';
+
+const HOME_JSONLD = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsTeam',
+  name: 'Reus FC Reddis',
+  sport: 'Football',
+  memberOf: { '@type': 'SportsOrganization', name: 'Segona Federació' },
+  location: { '@type': 'Place', name: 'Estadi Municipal de Reus', address: 'Reus, Catalunya' },
+  url: 'https://www.reusfcreddis.cat/',
+  logo: '/assets/badges/rfcr.webp',
+};
 
 export default function Home() {
   const now = Date.now();
@@ -24,6 +36,7 @@ export default function Home() {
 
   return (
     <>
+      <Seo jsonLd={HOME_JSONLD} />
       <section className={styles.hero} style={{ backgroundImage: `url(${club.heroImages.stadium})` }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroInner}`}>

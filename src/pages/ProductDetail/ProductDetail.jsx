@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import products from '../../data/products.json';
 import Badge from '../../components/ui/Badge/Badge.jsx';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 import styles from './ProductDetail.module.css';
 
 const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
@@ -17,8 +18,23 @@ export default function ProductDetail() {
 
   const related = products.filter(x => x.category === p.category && x.slug !== p.slug).slice(0, 4);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.name,
+    image: [p.image],
+    description: p.description,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: p.price,
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
   return (
     <main className={`container ${styles.page}`}>
+      <Seo title={p.name} description={p.description} image={p.image} jsonLd={jsonLd} />
       <nav className={styles.crumbs}>
         <Link to="/botiga">Botiga</Link>
         <span aria-hidden="true">/</span>

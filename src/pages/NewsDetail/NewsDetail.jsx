@@ -3,6 +3,7 @@ import news from '../../data/news.json';
 import Badge from '../../components/ui/Badge/Badge.jsx';
 import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 import { formatDateLong } from '../../utils/dates.js';
 import styles from './NewsDetail.module.css';
 
@@ -16,8 +17,20 @@ export default function NewsDetail() {
     .filter(n => n.slug !== slug && n.category === item.category)
     .slice(0, 3);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: item.title,
+    image: [item.image],
+    datePublished: item.date,
+    author: { '@type': 'Organization', name: item.author },
+    publisher: { '@type': 'Organization', name: 'Reus FC Reddis' },
+    articleSection: item.category,
+  };
+
   return (
     <main className={styles.page}>
+      <Seo title={item.title} description={item.excerpt} image={item.image} jsonLd={jsonLd} />
       <article>
         <div className={styles.hero}>
           <img src={item.image} alt="" className={styles.heroImg} />

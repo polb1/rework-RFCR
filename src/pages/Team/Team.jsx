@@ -4,6 +4,7 @@ import staff from '../../data/staff.json';
 import club from '../../data/club.json';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
 import Badge from '../../components/ui/Badge/Badge.jsx';
+import Seo from '../../components/ui/Seo/Seo.jsx';
 import styles from './Team.module.css';
 
 const POSITIONS = ['Porter', 'Defensa', 'Migcampista', 'Davanter'];
@@ -41,6 +42,7 @@ export default function Team() {
 
   return (
     <main className={`container ${styles.page}`}>
+      <Seo title="Primer Equip" description={`Plantilla del Reus FC Reddis temporada ${club.season}: ${players.length} jugadors i cos tècnic dirigit per ${staff.coach.name}.`} />
       <header className={styles.head}>
         <Badge variant="primary">{club.competition} · {club.group}</Badge>
         <h1 className={styles.title}>Primer Equip</h1>
