@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import news from '../../data/news.json';
+import { useNews, useNewsItem } from '../../lib/useNews.js';
 import Badge from '../../components/ui/Badge/Badge.jsx';
 import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
@@ -9,11 +9,14 @@ import styles from './NewsDetail.module.css';
 
 export default function NewsDetail() {
   const { slug } = useParams();
-  const item = news.find(n => n.slug === slug);
+  const { item, loading, error } = useNewsItem(slug);
+  const { data: allNews } = useNews();
 
+  if (loading) return <main className="container" style={{ padding: '4rem 0' }}><p>Carregant…</p></main>;
+  if (!item && !loading && error === null) return <Navigate to="/actualitat" replace />;
   if (!item) return <Navigate to="/actualitat" replace />;
 
-  const related = news
+  const related = allNews
     .filter(n => n.slug !== slug && n.category === item.category)
     .slice(0, 3);
 

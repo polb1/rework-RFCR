@@ -1,0 +1,26 @@
+export default {
+  name: 'match',
+  title: 'Partits',
+  type: 'document',
+  fields: [
+    { name: 'date', title: 'Data i hora', type: 'datetime', validation: r => r.required() },
+    { name: 'competition', title: 'Competició', type: 'string' },
+    { name: 'round', title: 'Jornada', type: 'string' },
+    { name: 'venue', title: 'Estadi', type: 'string' },
+    { name: 'status', title: 'Estat', type: 'string', options: { list: ['scheduled', 'played', 'live'] } },
+    { name: 'homeName', title: 'Equip local', type: 'string' },
+    { name: 'homeShortName', title: 'Local (abrev.)', type: 'string' },
+    { name: 'homeBadge', title: 'Escut local', type: 'image' },
+    { name: 'awayName', title: 'Equip visitant', type: 'string' },
+    { name: 'awayShortName', title: 'Visitant (abrev.)', type: 'string' },
+    { name: 'awayBadge', title: 'Escut visitant', type: 'image' },
+    { name: 'homeScore', title: 'Gols local', type: 'number' },
+    { name: 'awayScore', title: 'Gols visitant', type: 'number' },
+    { name: 'ticketsUrl', title: 'URL entrades', type: 'url' },
+  ],
+  orderings: [{ title: 'Data', name: 'dateAsc', by: [{ field: 'date', direction: 'asc' }] }],
+  preview: {
+    select: { home: 'homeName', away: 'awayName', date: 'date' },
+    prepare: ({ home, away, date }) => ({ title: `${home} - ${away}`, subtitle: new Date(date).toLocaleDateString('ca-ES') }),
+  },
+};
