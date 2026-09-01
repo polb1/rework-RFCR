@@ -177,10 +177,11 @@
 .tilesGrid {
   display: grid;
   gap: var(--space-4);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
 }
-@media (min-width: 640px) { .tilesGrid { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); } }
-@media (min-width: 1024px) { .tilesGrid { grid-template-columns: repeat(5, 1fr); gap: var(--space-6); } }
+@media (min-width: 640px) { .tilesGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); } }
+@media (min-width: 1024px) { .tilesGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-6); } }
 .featTile {
   display: block;
   color: inherit;
@@ -189,6 +190,8 @@
   position: relative;
   z-index: 1;
   transform-origin: center bottom;
+  min-width: 0;
+  width: 100%;
 }
 .featTile:hover,
 .featTile:focus-visible {
@@ -197,10 +200,20 @@
 }
 .featImgWrap {
   position: relative;
+  width: 100%;
   aspect-ratio: 3 / 5;
   overflow: hidden;
   background: #000;
   border-radius: var(--radius-md);
+}
+.featImgWrap::after {
+  /* fallback per navegadors sense aspect-ratio: força alçada */
+  content: '';
+  display: block;
+  padding-top: 166.66%;
+}
+@supports (aspect-ratio: 1) {
+  .featImgWrap::after { display: none; }
 }
 .featImg {
   width: 100%; height: 100%;
