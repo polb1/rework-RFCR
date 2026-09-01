@@ -1,0 +1,12 @@
+.page { padding-block: var(--space-12); }
+.head { margin-bottom: var(--space-12); }
+.title {
+  font-size: var(--text-5xl);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-top: var(--space-3);
+}
+.sub { color: var(--color-text-muted); margin-top: var(--space-2); }
+.section { margin-top: var(--space-16); }
+.list { display: flex; flex-direction: column; gap: var(--space-3); }
+.empty { color: var(--color-text-muted); font-style: italic; }
