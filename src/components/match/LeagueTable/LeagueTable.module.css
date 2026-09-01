@@ -19,6 +19,12 @@
 
 .narrow { width: 40px; }
 .team { text-align: left !important; font-weight: 600; }
+.teamCell { display: inline-flex; align-items: center; gap: var(--space-2); }
+.badge {
+  width: 22px; height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 .points {
   font-family: var(--font-display);
   font-weight: 800;
