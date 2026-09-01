@@ -24,3 +24,17 @@ a:hover { color: var(--color-primary); }
   margin-inline: auto;
   padding-inline: var(--space-4);
 }
+
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  transform: translateY(-200%);
+  transition: transform .15s;
+}
+.skip-link:focus { transform: translateY(0); }
