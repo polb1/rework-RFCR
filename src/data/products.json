@@ -1,8 +1,14 @@
 [
-  { "id": "pr01", "slug": "equipacio-primera-25-26", "name": "Equipació primera 25-26", "price": 65, "image": "/assets/shop/placeholder.svg", "category": "equipacio" },
-  { "id": "pr02", "slug": "equipacio-segona-25-26", "name": "Equipació segona 25-26",   "price": 65, "image": "/assets/shop/placeholder.svg", "category": "equipacio" },
-  { "id": "pr03", "slug": "polo-oficial",           "name": "Polo oficial",             "price": 35, "image": "/assets/shop/placeholder.svg", "category": "roba" },
-  { "id": "pr04", "slug": "bufanda-classica",       "name": "Bufanda clàssica",         "price": 15, "image": "/assets/shop/placeholder.svg", "category": "accessoris" },
-  { "id": "pr05", "slug": "gorra-club",             "name": "Gorra del club",           "price": 20, "image": "/assets/shop/placeholder.svg", "category": "accessoris" },
-  { "id": "pr06", "slug": "xandall-entrenament",    "name": "Xandall d'entrenament",    "price": 85, "image": "/assets/shop/placeholder.svg", "category": "roba" }
+  { "id": "pr01", "slug": "equipacio-primera-26-27",   "name": "Equipació primera 26/27",       "price": 65, "image": "/assets/shop/placeholder.svg", "category": "equipacio", "description": "Samarreta oficial del primer equip. Teixit tècnic transpirable amb escut brodat i patrocinadors oficials." },
+  { "id": "pr02", "slug": "equipacio-segona-26-27",    "name": "Equipació segona 26/27",        "price": 65, "image": "/assets/shop/placeholder.svg", "category": "equipacio", "description": "Segona equipació oficial del Reus FC Reddis per a la temporada 26/27." },
+  { "id": "pr03", "slug": "samarreta-gaudi-centenari", "name": "Samarreta Gaudí Centenari",     "price": 89, "image": "/assets/shop/placeholder.svg", "category": "equipacio", "description": "Edició limitada commemorativa del centenari, inspirada en el trencadís modernista." },
+  { "id": "pr04", "slug": "polo-oficial",              "name": "Polo oficial",                  "price": 35, "image": "/assets/shop/placeholder.svg", "category": "roba",      "description": "Polo oficial de passeig amb escut brodat." },
+  { "id": "pr05", "slug": "xandall-entrenament",       "name": "Xandall d'entrenament",         "price": 85, "image": "/assets/shop/placeholder.svg", "category": "roba",      "description": "Xandall complet d'entrenament amb tecnologia transpirable." },
+  { "id": "pr06", "slug": "dessuadora-capucha",        "name": "Dessuadora amb caputxa",        "price": 55, "image": "/assets/shop/placeholder.svg", "category": "roba",      "description": "Dessuadora de cotó amb escut brodat i caputxa ajustable." },
+  { "id": "pr07", "slug": "bufanda-classica",          "name": "Bufanda clàssica",              "price": 15, "image": "/assets/shop/placeholder.svg", "category": "accessoris","description": "Bufanda roig-i-negra teixida amb el nom del club." },
+  { "id": "pr08", "slug": "gorra-club",                "name": "Gorra del club",                "price": 20, "image": "/assets/shop/placeholder.svg", "category": "accessoris","description": "Gorra ajustable amb escut brodat." },
+  { "id": "pr09", "slug": "motxilla-oficial",          "name": "Motxilla oficial",              "price": 40, "image": "/assets/shop/placeholder.svg", "category": "accessoris","description": "Motxilla amb compartiment per portàtil i logo brodat." },
+  { "id": "pr10", "slug": "banderola-municipal",       "name": "Banderola Municipal",           "price": 12, "image": "/assets/shop/placeholder.svg", "category": "accessoris","description": "Banderola per animar al Municipal en dies de partit." },
+  { "id": "pr11", "slug": "samarreta-infantil-primera","name": "Samarreta primera infantil",    "price": 45, "image": "/assets/shop/placeholder.svg", "category": "infantil",  "description": "Equipació de primer equip en talles infantils." },
+  { "id": "pr12", "slug": "xandall-infantil",          "name": "Xandall infantil",              "price": 60, "image": "/assets/shop/placeholder.svg", "category": "infantil",  "description": "Xandall d'entrenament en talles infantils." }
 ]

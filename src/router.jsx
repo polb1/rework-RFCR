@@ -14,6 +14,8 @@ import History from './pages/History/History.jsx';
 import Board from './pages/Board/Board.jsx';
 import Sponsors from './pages/Sponsors/Sponsors.jsx';
 import Contact from './pages/Contact/Contact.jsx';
+import Shop from './pages/Shop/Shop.jsx';
+import ProductDetail from './pages/ProductDetail/ProductDetail.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 
 export const router = createBrowserRouter([
@@ -34,6 +36,8 @@ export const router = createBrowserRouter([
       { path: '/directiva', element: <Board /> },
       { path: '/patrocinadors', element: <Sponsors /> },
       { path: '/contacte', element: <Contact /> },
+      { path: '/botiga', element: <Shop /> },
+      { path: '/botiga/:slug', element: <ProductDetail /> },
       { path: '*', element: <NotFound /> },
     ],
   },
