@@ -10,6 +10,7 @@ export const secondaryNav = [
   { label: 'Resultats', to: '/resultats' },
   { label: 'Classificació', to: '/classificacio' },
   { label: 'Afició', to: '/aficio' },
+  { label: 'Benvingut visitant', to: '/benvingut-visitant' },
   { label: 'Estadi', to: '/estadi' },
   { label: 'Història', to: '/historia' },
 ];

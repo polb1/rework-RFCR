@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "eyebrow": "Benvinguts a Reus",
+    "title": "Benvingut, visitant",
+    "sub": "Tant si véns per veure el teu equip com si vols descobrir la ciutat, aquesta és la teva guia ràpida. Reus t'espera amb el seu modernisme, la seva gastronomia i la seva llegendària tradició vermutera."
+  },
+  "intro": [
+    "Reus és la capital del Baix Camp i bressol d'Antoni Gaudí. Amb prop de 105.000 habitants, la ciutat combina un centre històric ple d'edificis modernistes amb una escena gastronòmica que ha convertit el vermut en el seu ambaixador més internacional.",
+    "El Reus FC Reddis vol acollir-te com si fossis a casa. T'oferim aquesta selecció d'informació pràctica perquè aprofitis al màxim la teva visita, abans o després del partit al Municipal."
+  ],
+  "stadium": {
+    "name": "Estadi Municipal de Reus",
+    "address": "Av. dels Països Catalans, 43206 Reus",
+    "howToArrive": "L'estadi es troba a uns 15 minuts caminant del centre. Amb cotxe, sortida 37 de l'AP-7 (direcció Reus). Aparcament gratuït al voltant del recinte.",
+    "capacity": 4700,
+    "parking": "Zones d'aparcament lliure al carrer Astorga i Camí de Mont-roig, a menys de 5 minuts a peu."
+  },
+  "sleep": [
+    { "name": "Hotel Gaudí",              "type": "Hotel ★★★★",    "area": "Centre",       "note": "A tocar de la Plaça del Mercadal. Perfecte per moure's a peu." },
+    { "name": "Hotel NH Ciutat de Reus",  "type": "Hotel ★★★★",    "area": "Centre-Nord",  "note": "Modern, prop del recinte firal i la Fira de Reus." },
+    { "name": "Hotel Simonet",            "type": "Hotel ★★★",     "area": "Centre",       "note": "Cèntric, tracte familiar." },
+    { "name": "Hotel Reus Park",          "type": "Hotel ★★★",     "area": "Sortida AP-7", "note": "Còmode d'accedir amb cotxe, aparcament propi." },
+    { "name": "Aparthotel Els Comtes",    "type": "Aparthotel",     "area": "Centre",       "note": "Apartaments amb cuina, ideal per famílies o estades llargues." }
+  ],
+  "eat": [
+    { "name": "Fonda Granada",       "cuisine": "Cuina catalana",           "area": "Centre",       "note": "Referent històric del Reus més gastronòmic. Menú del dia i carta." },
+    { "name": "El Racó del Vermut",  "cuisine": "Tapes i vermut",           "area": "Centre",       "note": "Impossible venir a Reus i no tastar el vermut aquí." },
+    { "name": "La Grava",            "cuisine": "Cuina de mercat",          "area": "Mercadal",     "note": "Cuina de proximitat, ambient acollidor." },
+    { "name": "Cal Panxeta",         "cuisine": "Tradicional",              "area": "Casc antic",   "note": "Racó tranquil per plats de sempre." },
+    { "name": "Torreforta",          "cuisine": "Arrossos i marisc",        "area": "Perifèria",   "note": "Un clàssic per un dinar de diumenge en gran." },
+    { "name": "La Nena de Reus",     "cuisine": "Cafeteria / esmorzars",    "area": "Centre",       "note": "Bon punt per esmorzar abans del partit." }
+  ],
+  "see": [
+    { "name": "Gaudí Centre",           "type": "Museu",       "area": "Plaça del Mercadal", "note": "Centre d'interpretació dedicat a Antoni Gaudí, nascut a Reus el 1852." },
+    { "name": "Ruta del Modernisme",    "type": "Itinerari",   "area": "Casc urbà",          "note": "Casa Navàs, Casa Rull, Casa Gasull, Institut Pere Mata — més de 20 edificis." },
+    { "name": "Plaça del Mercadal",     "type": "Plaça major", "area": "Centre",             "note": "El cor de la ciutat, envoltada d'edificis modernistes i cafès amb terrassa." },
+    { "name": "Museu de Reus",          "type": "Museu",       "area": "Raval Santa Anna",   "note": "Història, arqueologia i art contemporani en un espai singular." },
+    { "name": "Institut Pere Mata",     "type": "Modernisme",  "area": "Ctra. de Castellvell","note": "Obra mestra de Domènech i Montaner, el 'petit palau' modernista." },
+    { "name": "Passeig de Prim",        "type": "Passeig",     "area": "Centre",             "note": "Passeig arbrat amb l'estàtua del General Prim, ideal per passejar." }
+  ],
+  "vermut": {
+    "title": "Reus, capital del vermut",
+    "text": "El vermut és una tradició sagrada a Reus. Al segle XIX la ciutat concentrava desenes de destil·leries i exportava a mig món. Avui encara pots visitar cellers històrics com Vermuts Miró o Yzaguirre, i celebrar la 'hora del vermut' als bars del Mercadal — un ritual social que no et pots perdre."
+  },
+  "tips": [
+    { "title": "Idioma",    "text": "Es parla català i castellà. La retolació oficial és en català." },
+    { "title": "Moneda",    "text": "Euro (€). Targeta acceptada a tot arreu, però porta petit efectiu per bars." },
+    { "title": "Transport", "text": "Estació de tren (Rodalies R14, R15, R16) i autobusos urbans. Aeroport de Reus a 3 km." },
+    { "title": "Emergències","text": "112 (general) · Policia Local 977 010 092 · Hospital Sant Joan 977 310 300." },
+    { "title": "Farmàcia",  "text": "Consulta la farmàcia de guàrdia a l'ajuntament o farmacies-cat.info." },
+    { "title": "Wi-Fi",     "text": "Wi-Fi gratuïta a places i biblioteques públiques (xarxa 'Reus Wifi')." }
+  ],
+  "externalLinks": [
+    { "label": "Turisme de Reus (oficial)", "href": "https://www.reusturisme.cat/" },
+    { "label": "Gaudí Centre",              "href": "https://www.gaudicentre.cat/" },
+    { "label": "Ajuntament de Reus",        "href": "https://www.reus.cat/" }
+  ]
+}

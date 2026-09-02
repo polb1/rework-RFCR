@@ -46,6 +46,13 @@ export default function Fan() {
           <p>Informació de l'estadi, com arribar-hi i on aparcar en dies de partit.</p>
           <span className={styles.tileCta}>Descobreix →</span>
         </Link>
+
+        <Link to="/benvingut-visitant" className={styles.tile}>
+          <span className={styles.tileEyebrow}>Visitants</span>
+          <h3 className={styles.tileTitle}>Benvingut a Reus</h3>
+          <p>Guia pràctica per l'aficionat visitant: on dormir, on dinar i què veure a la ciutat.</p>
+          <span className={styles.tileCta}>Veure la guia →</span>
+        </Link>
       </section>
 
       <section className={`container ${styles.social}`}>
