@@ -8,6 +8,7 @@ import SponsorsEditor from './editors/SponsorsEditor.jsx';
 import BoardEditor from './editors/BoardEditor.jsx';
 import HistoryEditor from './editors/HistoryEditor.jsx';
 import GenericJsonEditor from './editors/GenericJsonEditor.jsx';
+import ActivityLog from './editors/ActivityLog.jsx';
 import styles from './Admin.module.css';
 
 const ALLOWED_EMAILS = (import.meta.env.VITE_ADMIN_EMAIL || 'polboleda021@gmail.com')
@@ -86,6 +87,7 @@ export default function Admin() {
           <NavLink to="/admin/standings" className={({ isActive }) => isActive ? styles.active : ''}>Classificació</NavLink>
           <NavLink to="/admin/board"     className={({ isActive }) => isActive ? styles.active : ''}>Directiva</NavLink>
           <NavLink to="/admin/history"   className={({ isActive }) => isActive ? styles.active : ''}>Història</NavLink>
+          <NavLink to="/admin/activity"  className={({ isActive }) => isActive ? styles.active : ''}>Activitat</NavLink>
         </nav>
         <div className={styles.foot}>
           <Link to="/">↗ Veure web</Link>
@@ -104,6 +106,7 @@ export default function Admin() {
           <Route path="/standings" element={<GenericJsonEditor token={token} file="standings.json" title="Classificació" />} />
           <Route path="/board" element={<BoardEditor token={token} />} />
           <Route path="/history" element={<HistoryEditor token={token} />} />
+          <Route path="/activity" element={<ActivityLog />} />
           <Route path="*" element={<Navigate to="/admin/news" replace />} />
         </Routes>
       </main>
