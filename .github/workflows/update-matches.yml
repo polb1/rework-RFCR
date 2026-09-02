@@ -2,8 +2,11 @@ name: Update RFEF matches
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # 03:00 hora local Espanya (01:00 UTC hivern, 03:00 estiu)
-  workflow_dispatch:       # permet execució manual des de GitHub UI
+    # La RFEF publica horaris de Segona Federació els DILLUNS ~12 dies abans de cada jornada.
+    # Estratègia: capturar el mateix dilluns a la tarda + resta de dies matinada.
+    - cron: '0 12 * * 1'      # Dilluns 14:00 hora Espanya (estiu) — captura publicació RFEF
+    - cron: '0 1 * * 0,2-6'   # Dimarts-Diumenge 03:00 hora Espanya — correccions + resultats
+  workflow_dispatch:           # permet execució manual des de GitHub UI
 
 concurrency:
   group: update-matches
