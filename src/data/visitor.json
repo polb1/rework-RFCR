@@ -13,30 +13,150 @@
     "address": "Av. dels Països Catalans, 43206 Reus",
     "howToArrive": "L'estadi es troba a uns 15 minuts caminant del centre. Amb cotxe, sortida 37 de l'AP-7 (direcció Reus). Aparcament gratuït al voltant del recinte.",
     "capacity": 4700,
-    "parking": "Zones d'aparcament lliure al carrer Astorga i Camí de Mont-roig, a menys de 5 minuts a peu."
+    "parking": "Zones d'aparcament lliure al carrer Astorga i Camí de Mont-roig, a menys de 5 minuts a peu.",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Estadi+Municipal+de+Reus"
   },
   "sleep": [
-    { "name": "Hotel Gaudí",              "type": "Hotel ★★★★",    "area": "Centre",       "note": "A tocar de la Plaça del Mercadal. Perfecte per moure's a peu." },
-    { "name": "Hotel NH Ciutat de Reus",  "type": "Hotel ★★★★",    "area": "Centre-Nord",  "note": "Modern, prop del recinte firal i la Fira de Reus." },
-    { "name": "Hotel Simonet",            "type": "Hotel ★★★",     "area": "Centre",       "note": "Cèntric, tracte familiar." },
-    { "name": "Hotel Reus Park",          "type": "Hotel ★★★",     "area": "Sortida AP-7", "note": "Còmode d'accedir amb cotxe, aparcament propi." },
-    { "name": "Aparthotel Els Comtes",    "type": "Aparthotel",     "area": "Centre",       "note": "Apartaments amb cuina, ideal per famílies o estades llargues." }
+    {
+      "name": "Hotel Gaudí",
+      "type": "Hotel ★★★★",
+      "area": "Centre",
+      "note": "A tocar de la Plaça del Mercadal. Perfecte per moure's a peu.",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hotel+Gaud%C3%AD+Reus"
+    },
+    {
+      "name": "Hotel NH Ciutat de Reus",
+      "type": "Hotel ★★★★",
+      "area": "Centre-Nord",
+      "note": "Modern, prop del recinte firal i la Fira de Reus.",
+      "image": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=NH+Ciutat+de+Reus"
+    },
+    {
+      "name": "Hotel Simonet",
+      "type": "Hotel ★★★",
+      "area": "Centre",
+      "note": "Cèntric, tracte familiar.",
+      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hotel+Simonet+Reus"
+    },
+    {
+      "name": "Hotel Reus Park",
+      "type": "Hotel ★★★",
+      "area": "Sortida AP-7",
+      "note": "Còmode d'accedir amb cotxe, aparcament propi.",
+      "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hotel+Reus+Park"
+    },
+    {
+      "name": "Aparthotel Els Comtes",
+      "type": "Aparthotel",
+      "area": "Centre",
+      "note": "Apartaments amb cuina, ideal per famílies o estades llargues.",
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Aparthotel+Els+Comtes+Reus"
+    }
   ],
   "eat": [
-    { "name": "Fonda Granada",       "cuisine": "Cuina catalana",           "area": "Centre",       "note": "Referent històric del Reus més gastronòmic. Menú del dia i carta." },
-    { "name": "El Racó del Vermut",  "cuisine": "Tapes i vermut",           "area": "Centre",       "note": "Impossible venir a Reus i no tastar el vermut aquí." },
-    { "name": "La Grava",            "cuisine": "Cuina de mercat",          "area": "Mercadal",     "note": "Cuina de proximitat, ambient acollidor." },
-    { "name": "Cal Panxeta",         "cuisine": "Tradicional",              "area": "Casc antic",   "note": "Racó tranquil per plats de sempre." },
-    { "name": "Torreforta",          "cuisine": "Arrossos i marisc",        "area": "Perifèria",   "note": "Un clàssic per un dinar de diumenge en gran." },
-    { "name": "La Nena de Reus",     "cuisine": "Cafeteria / esmorzars",    "area": "Centre",       "note": "Bon punt per esmorzar abans del partit." }
+    {
+      "name": "Fonda Granada",
+      "cuisine": "Cuina catalana",
+      "area": "Centre",
+      "note": "Referent històric del Reus més gastronòmic. Menú del dia i carta.",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fonda+Granada+Reus"
+    },
+    {
+      "name": "El Racó del Vermut",
+      "cuisine": "Tapes i vermut",
+      "area": "Centre",
+      "note": "Impossible venir a Reus i no tastar el vermut aquí.",
+      "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Ra%C3%B3+del+Vermut+Reus"
+    },
+    {
+      "name": "La Grava",
+      "cuisine": "Cuina de mercat",
+      "area": "Mercadal",
+      "note": "Cuina de proximitat, ambient acollidor.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Grava+Reus"
+    },
+    {
+      "name": "Cal Panxeta",
+      "cuisine": "Tradicional",
+      "area": "Casc antic",
+      "note": "Racó tranquil per plats de sempre.",
+      "image": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cal+Panxeta+Reus"
+    },
+    {
+      "name": "Torreforta",
+      "cuisine": "Arrossos i marisc",
+      "area": "Perifèria",
+      "note": "Un clàssic per un dinar de diumenge en gran.",
+      "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Torreforta+Reus"
+    },
+    {
+      "name": "La Nena de Reus",
+      "cuisine": "Cafeteria / esmorzars",
+      "area": "Centre",
+      "note": "Bon punt per esmorzar abans del partit.",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Nena+de+Reus"
+    }
   ],
   "see": [
-    { "name": "Gaudí Centre",           "type": "Museu",       "area": "Plaça del Mercadal", "note": "Centre d'interpretació dedicat a Antoni Gaudí, nascut a Reus el 1852." },
-    { "name": "Ruta del Modernisme",    "type": "Itinerari",   "area": "Casc urbà",          "note": "Casa Navàs, Casa Rull, Casa Gasull, Institut Pere Mata — més de 20 edificis." },
-    { "name": "Plaça del Mercadal",     "type": "Plaça major", "area": "Centre",             "note": "El cor de la ciutat, envoltada d'edificis modernistes i cafès amb terrassa." },
-    { "name": "Museu de Reus",          "type": "Museu",       "area": "Raval Santa Anna",   "note": "Història, arqueologia i art contemporani en un espai singular." },
-    { "name": "Institut Pere Mata",     "type": "Modernisme",  "area": "Ctra. de Castellvell","note": "Obra mestra de Domènech i Montaner, el 'petit palau' modernista." },
-    { "name": "Passeig de Prim",        "type": "Passeig",     "area": "Centre",             "note": "Passeig arbrat amb l'estàtua del General Prim, ideal per passejar." }
+    {
+      "name": "Gaudí Centre",
+      "type": "Museu",
+      "area": "Plaça del Mercadal",
+      "note": "Centre d'interpretació dedicat a Antoni Gaudí, nascut a Reus el 1852.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Gaudi_Centre_%28Reus%29_-_1.jpg/800px-Gaudi_Centre_%28Reus%29_-_1.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gaud%C3%AD+Centre+Reus"
+    },
+    {
+      "name": "Ruta del Modernisme",
+      "type": "Itinerari",
+      "area": "Casc urbà",
+      "note": "Casa Navàs, Casa Rull, Casa Gasull, Institut Pere Mata — més de 20 edificis.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Casa_Nav%C3%A0s_-_Reus.jpg/800px-Casa_Nav%C3%A0s_-_Reus.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+Nav%C3%A0s+Reus"
+    },
+    {
+      "name": "Plaça del Mercadal",
+      "type": "Plaça major",
+      "area": "Centre",
+      "note": "El cor de la ciutat, envoltada d'edificis modernistes i cafès amb terrassa.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Reus_-_Pla%C3%A7a_del_Mercadal_3.JPG/800px-Reus_-_Pla%C3%A7a_del_Mercadal_3.JPG",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+del+Mercadal+Reus"
+    },
+    {
+      "name": "Museu de Reus",
+      "type": "Museu",
+      "area": "Raval Santa Anna",
+      "note": "Història, arqueologia i art contemporani en un espai singular.",
+      "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=600&q=80&auto=format",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Museu+de+Reus"
+    },
+    {
+      "name": "Institut Pere Mata",
+      "type": "Modernisme",
+      "area": "Ctra. de Castellvell",
+      "note": "Obra mestra de Domènech i Montaner, el 'petit palau' modernista.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Institut_Pere_Mata_-_Reus_-_Pavell%C3%B3_dels_Distingits_-_2.JPG/800px-Institut_Pere_Mata_-_Reus_-_Pavell%C3%B3_dels_Distingits_-_2.JPG",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Institut+Pere+Mata+Reus"
+    },
+    {
+      "name": "Passeig de Prim",
+      "type": "Passeig",
+      "area": "Centre",
+      "note": "Passeig arbrat amb l'estàtua del General Prim, ideal per passejar.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/006_Monument_al_general_Prim%2C_pla%C3%A7a_de_Prim_%28Reus%29.jpg/800px-006_Monument_al_general_Prim%2C_pla%C3%A7a_de_Prim_%28Reus%29.jpg",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Passeig+de+Prim+Reus"
+    }
   ],
   "vermut": {
     "title": "Reus, capital del vermut",

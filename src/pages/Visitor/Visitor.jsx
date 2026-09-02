@@ -6,17 +6,70 @@ import Seo from '../../components/ui/Seo/Seo.jsx';
 import club from '../../data/club.json';
 import styles from './Visitor.module.css';
 
+const KIND_ICON = {
+  sleep: '🛏️',
+  eat: '🍴',
+  see: '🏛️',
+};
+
+function Card({ item, kind }) {
+  const label = item.type || item.cuisine;
+
+  const cardContent = (
+    <>
+      <div className={styles.imgWrap}>
+        {item.image ? (
+          <img
+            src={item.image}
+            alt={item.name}
+            className={styles.img}
+            loading="lazy"
+            onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement.classList.add(styles.imgFallbackShow); }}
+          />
+        ) : null}
+        <div className={styles.imgFallback} aria-hidden="true">{KIND_ICON[kind] || '📍'}</div>
+      </div>
+      <div className={styles.body}>
+        <div className={styles.head}>
+          <h3 className={styles.name}>{item.name}</h3>
+          {label && <span className={styles.tag}>{label}</span>}
+        </div>
+        <p className={styles.area}>
+          <svg className={styles.iconSm} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {item.area}
+        </p>
+        <p className={styles.note}>{item.note}</p>
+        {item.mapUrl && (
+          <span className={styles.mapCta}>
+            <svg className={styles.iconSm} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 20l-6-3V4l6 3M9 20l6-3M9 20V7M15 17l6 3V7l-6-3M15 17V4"/></svg>
+            Veure al mapa
+          </span>
+        )}
+      </div>
+    </>
+  );
+
+  return item.mapUrl ? (
+    <a
+      href={item.mapUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.card}
+      aria-label={`Obrir ${item.name} a Google Maps`}
+    >
+      {cardContent}
+    </a>
+  ) : (
+    <div className={styles.card}>{cardContent}</div>
+  );
+}
+
 function CardList({ items, kind }) {
   return (
     <ul className={styles.list}>
       {items.map(it => (
-        <li key={it.name} className={styles.card}>
-          <div className={styles.cardHead}>
-            <h3>{it.name}</h3>
-            <span className={styles.tag}>{it.type || it.cuisine}</span>
-          </div>
-          <p className={styles.area}>📍 {it.area}</p>
-          <p className={styles.note}>{it.note}</p>
+        <li key={it.name}>
+          <Card item={it} kind={kind} />
         </li>
       ))}
     </ul>
@@ -54,6 +107,11 @@ export default function Visitor() {
               <p><strong>🚗 Com arribar:</strong> {data.stadium.howToArrive}</p>
               <p><strong>🅿️ Aparcament:</strong> {data.stadium.parking}</p>
               <p><strong>👥 Aforament:</strong> {data.stadium.capacity.toLocaleString('ca-ES')} espectadors</p>
+              {data.stadium.mapUrl && (
+                <a href={data.stadium.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.stadiumCta}>
+                  Obrir a Google Maps →
+                </a>
+              )}
             </div>
             <div className={styles.stadiumMap}>
               <iframe
@@ -70,19 +128,19 @@ export default function Visitor() {
         {/* ON DORMIR */}
         <section className={styles.section}>
           <SectionHeader eyebrow="On dormir" title="Allotjaments a Reus" />
-          <CardList items={data.sleep} />
+          <CardList items={data.sleep} kind="sleep" />
         </section>
 
         {/* ON DINAR */}
         <section className={styles.section}>
           <SectionHeader eyebrow="On dinar" title="Menjar i tapes" />
-          <CardList items={data.eat} />
+          <CardList items={data.eat} kind="eat" />
         </section>
 
         {/* QUÈ VEURE */}
         <section className={styles.section}>
           <SectionHeader eyebrow="Què veure" title="Reus imprescindible" />
-          <CardList items={data.see} />
+          <CardList items={data.see} kind="see" />
         </section>
 
         {/* VERMUT */}

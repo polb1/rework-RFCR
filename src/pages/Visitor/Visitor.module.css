@@ -72,12 +72,28 @@
   line-height: 1.6;
 }
 .stadiumInfo p { margin: 0; }
+.stadiumCta {
+  margin-top: var(--space-3);
+  align-self: flex-start;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--text-sm);
+}
+.stadiumCta:hover { filter: brightness(1.1); color: var(--color-text-on-dark); }
+
 .stadiumMap {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
   min-height: 320px;
   aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-md);
 }
 .stadiumMap iframe {
   width: 100%;
@@ -86,47 +102,104 @@
   display: block;
 }
 
-/* CARDS (sleep/eat/see) */
+/* CARDS grid */
 .list {
   list-style: none;
   padding: 0;
   margin: var(--space-6) 0 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
+
+/* CARD */
 .card {
-  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  transition: transform .15s, box-shadow .15s, border-color .15s;
-  display: flex; flex-direction: column;
-  gap: var(--space-2);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s, border-color .2s;
+  height: 100%;
+  position: relative;
 }
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+.card:hover, .card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
   border-color: var(--color-primary);
 }
-.cardHead {
+.card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+/* Imatge amb fallback */
+.imgWrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--color-surface), #e5e7eb);
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+  display: block;
+}
+.card:hover .img { transform: scale(1.05); }
+.imgFallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #C8102E 100%);
+  color: #fff;
+  opacity: 0;
+}
+.imgFallbackShow .imgFallback { opacity: 1; }
+.imgWrap:not(:has(img)) .imgFallback { opacity: 1; }
+
+/* Body */
+.body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+.head {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--space-2);
   flex-wrap: wrap;
+  margin-bottom: 2px;
 }
-.cardHead h3 { font-size: var(--text-lg); margin: 0; line-height: 1.2; }
+.name {
+  font-size: var(--text-lg);
+  margin: 0;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+.card:hover .name { color: var(--color-primary); }
+
 .tag {
   font-size: var(--text-xs);
   color: var(--color-primary);
   background: rgba(200, 16, 46, 0.08);
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .area {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   margin: 0;
@@ -136,7 +209,24 @@
   color: var(--color-text);
   line-height: 1.55;
   margin: 0;
+  flex: 1;
 }
+.mapCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: gap .15s;
+}
+.card:hover .mapCta { gap: 10px; }
+.iconSm { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* VERMUT */
 .vermut {
@@ -162,14 +252,17 @@
   margin: var(--space-6) 0 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 .tipCard {
   padding: var(--space-4);
   background: var(--color-surface);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   border-top: 3px solid var(--color-primary);
+  transition: transform .15s;
 }
+.tipCard:hover { transform: translateY(-2px); }
 .tipCard h4 {
   font-size: var(--text-sm);
   text-transform: uppercase;
@@ -195,11 +288,12 @@
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
-  transition: border-color .15s, background .15s;
+  transition: border-color .15s, background .15s, transform .15s;
 }
 .extLink:hover {
   border-color: var(--color-primary);
   background: rgba(200, 16, 46, 0.05);
+  transform: translateY(-2px);
 }
 
 /* FOOT BLOCK */
