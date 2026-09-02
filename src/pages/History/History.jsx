@@ -41,7 +41,7 @@ export default function History() {
   const timelineRef = useRef(null);
   const progress = useScrollProgress(timelineRef);
 
-  const step = 220; // px between milestones
+  const step = 340; // px between milestones
   const paddingTop = 40;
   const paddingBottom = 40;
   const height = paddingTop + step * (history.length - 1) + paddingBottom;
@@ -117,6 +117,11 @@ export default function History() {
                 <div className={styles.year}>{h.year}</div>
                 <h3 className={styles.entryTitle}>{h.title}</h3>
                 <p className={styles.text}>{h.text}</p>
+                {h.image && (
+                  <div className={styles.entryImgWrap}>
+                    <img src={h.image} alt="" loading="lazy" className={styles.entryImg} />
+                  </div>
+                )}
               </li>
             );
           })}

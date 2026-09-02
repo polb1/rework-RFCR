@@ -2,22 +2,36 @@
   {
     "year": "1909",
     "title": "Fundació del CF Reus Deportiu",
-    "text": "Tot comença l'any 1909 amb la fundació del CF Reus Deportiu. Durant més d'un segle serà el referent esportiu principal de la ciutat, formant part de la història col·lectiva de Reus."
+    "text": "Tot comença l'any 1909 amb la fundació del CF Reus Deportiu. Durant més d'un segle serà el referent esportiu principal de la ciutat, formant part de la història col·lectiva de Reus.",
+    "image": "/assets/history/1909-Reus.jpg",
+    "gallery": [
+      "/assets/history/1909-Reus.jpg",
+      "/assets/history/1909-Reus2.jpg",
+      "/assets/history/1909-Reus3.jpg"
+    ]
   },
   {
     "year": "1922",
     "title": "Neix el Club Futbol Reddis",
-    "text": "L'any 1922 es fundava el Club Futbol Reddis, un club arrelat als barris de Reus amb una trajectòria basada en la proximitat, l'esforç i la formació de jugadors del territori."
+    "text": "L'any 1922 es fundava el Club Futbol Reddis, un club arrelat als barris de Reus amb una trajectòria basada en la proximitat, l'esforç i la formació de jugadors del territori.",
+    "image": "/assets/history/1909-Reus2.jpg"
   },
   {
     "year": "2015-2016",
     "title": "Etapa daurada del Reus Deportiu",
-    "text": "Sota la direcció de Natxo González, el CF Reus Deportiu assoleix l'ascens històric a Segona Divisió després d'un playoff memorable contra el Racing de Santander."
+    "text": "Sota la direcció de Natxo González, el CF Reus Deportiu assoleix l'ascens històric a Segona Divisió després d'un playoff memorable contra el Racing de Santander.",
+    "image": "/assets/history/2015-ascens-segona.jpg",
+    "gallery": [
+      "/assets/history/2015-ascens-segona.jpg",
+      "/assets/history/2015-ascens-segona2.jpg",
+      "/assets/history/2015-ascens-segona3.jpg"
+    ]
   },
   {
     "year": "2016-2019",
     "title": "Tres temporades a Segona Divisió",
-    "text": "El club competeix tres temporades entre l'elit del futbol espanyol amb un destacat 11è lloc en la primera. Un cicle que quedaria marcat en la memòria dels aficionats reusencs."
+    "text": "El club competeix tres temporades entre l'elit del futbol espanyol amb un destacat 11è lloc en la primera. Un cicle que quedaria marcat en la memòria dels aficionats reusencs.",
+    "image": "/assets/history/2015-ascens-segona3.jpg"
   },
   {
     "year": "2020",
@@ -27,22 +41,41 @@
   {
     "year": "2022",
     "title": "Fusió i naixement del Reus FC Reddis",
-    "text": "El 2022 es formalitza el Reus FC Reddis, unint l'essència dels dos projectes —Reus Deportiu i Club Futbol Reddis— en un de sol. Neix així un club renovat amb la vocació de retornar el futbol a Reus."
+    "text": "El 2022 es formalitza el Reus FC Reddis, unint l'essència dels dos projectes —Reus Deportiu i Club Futbol Reddis— en un de sol. Neix així un club renovat amb la vocació de retornar el futbol a Reus.",
+    "image": "/assets/history/2022-fusio-reddis.jpg",
+    "gallery": [
+      "/assets/history/2022-fusio-reddis.jpg",
+      "/assets/history/2022-fusio-reddis2.jpg",
+      "/assets/history/2022-fusio-reddis3.jpg"
+    ]
   },
   {
     "year": "2023",
     "title": "Ascens a Tercera Federació",
-    "text": "El maig de 2023 el Reus FC Reddis es proclama campió de Primera Catalana i aconsegueix el retorn del futbol nacional a la ciutat després de quatre anys d'absència."
+    "text": "El maig de 2023 el Reus FC Reddis es proclama campió de Primera Catalana i aconsegueix el retorn del futbol nacional a la ciutat després de quatre anys d'absència.",
+    "image": "/assets/history/2023-ascens-tercera-rfef.jpg",
+    "gallery": [
+      "/assets/history/2023-ascens-tercera-rfef.jpg",
+      "/assets/history/2023-ascens-tercera-rfef2.jpg",
+      "/assets/history/2023-ascens-tercera-rfef3.jpg"
+    ]
   },
   {
     "year": "2025",
     "title": "Ascens a Segona Federació",
-    "text": "L'abril de 2025 l'equip es proclama campió del seu grup a Tercera Federació i puja a Segona Federació (2a RFEF), quart nivell del futbol espanyol. Un pas clau en la consolidació del projecte."
+    "text": "L'abril de 2025 l'equip es proclama campió del seu grup a Tercera Federació i puja a Segona Federació (2a RFEF), quart nivell del futbol espanyol. Un pas clau en la consolidació del projecte.",
+    "image": "/assets/history/2025-ascens-segona-rfef.jpg",
+    "gallery": [
+      "/assets/history/2025-ascens-segona-rfef.jpg",
+      "/assets/history/2025-ascens-segona-rfef2.jpg",
+      "/assets/history/2025-ascens-segona-rfef3.jpg"
+    ]
   },
   {
     "year": "2025",
     "title": "El millor desplaçament de la història",
-    "text": "Prop de 1.200 aficionats es desplacen a l'Estadi Olímpic de Terrassa en el partit clau per assegurar el playoff d'ascens. Mai a la història del futbol reusenc s'havia produït un desplaçament tan massiu."
+    "text": "Prop de 1.200 aficionats es desplacen a l'Estadi Olímpic de Terrassa en el partit clau per assegurar el playoff d'ascens. Mai a la història del futbol reusenc s'havia produït un desplaçament tan massiu.",
+    "image": "/assets/aficio/desplacament-terrasa.jpg"
   },
   {
     "year": "2026",

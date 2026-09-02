@@ -15,6 +15,7 @@ const AWAY_TRIPS = [
     fans: '≈1.200',
     highlight: 'El millor desplaçament de la història del futbol reusenc.',
     detail: 'Prop de 1.200 aficionats van omplir el sector visitant per assegurar el playoff d\'ascens. Les 400 entrades oficials es van esgotar en menys de 24h. El club va organitzar un desplaçament en autocar a 20€.',
+    image: '/assets/aficio/desplacament-terrasa.jpg',
     source: 'https://www.diarimes.com/ca/esports/260504/millor-desplacament-historia-reus_218370.html'
   },
   {
@@ -25,6 +26,51 @@ const AWAY_TRIPS = [
     fans: '≈400',
     highlight: 'Massiu desplaçament en un partit clau per l\'ascens.',
     detail: 'Més de 400 aficionats roig-i-negres es van desplaçar a Barcelona per acompanyar l\'equip en el partit contra el Sant Andreu, un dels rivals directes per la promoció.',
+    image: '/assets/aficio/desplacament-sant-andreu.jpg',
+    source: null
+  },
+  {
+    date: '2026-03-15',
+    opponent: 'CD Ourense',
+    city: 'Ourense',
+    venue: 'Estadio O Couto',
+    fans: '≈150',
+    highlight: 'Desplaçament de llarga distància per un partit histric.',
+    detail: 'L\'afició roig-i-negra va viatjar fins a Galícia per acompanyar l\'equip al partit contra el CD Ourense. Un desplaçament emotiu que demostra el compromís dels seguidors.',
+    image: '/assets/aficio/desplacament-ourense.jpg',
+    source: null
+  },
+  {
+    date: '2026-02-08',
+    opponent: 'Atlético Baleares',
+    city: 'Palma',
+    venue: 'Estadi Balear',
+    fans: '≈180',
+    highlight: 'Vaig cap a les Illes: la primera expedició en vaixell.',
+    detail: 'Un grup important d\'aficionats va organitzar un desplaçament combinat amb vaixell i avió per acompanyar el Reus a l\'Estadi Balear davant l\'Atlético Baleares.',
+    image: '/assets/aficio/deplacament-atletico-baleares.jpg',
+    source: null
+  },
+  {
+    date: '2025-11-30',
+    opponent: 'Atlètic Lleida',
+    city: 'Lleida',
+    venue: 'Camp d\'Esports',
+    fans: '≈300',
+    highlight: 'Desplaçament tarragoní massiu al camp lleidatà.',
+    detail: 'Un derbi català carregat d\'expectació on l\'afició del Reus va tenyir de roig-i-negre una zona del Camp d\'Esports.',
+    image: '/assets/aficio/desplacament-atletic-lleida.jpg',
+    source: null
+  },
+  {
+    date: '2025-10-19',
+    opponent: 'UE Olot',
+    city: 'Olot',
+    venue: 'Estadi Municipal d\'Olot',
+    fans: '≈220',
+    highlight: 'La família roig-i-negra visita la Garrotxa.',
+    detail: 'Els aficionats del Reus van omplir el sector visitant al camp de l\'UE Olot, en un desplaçament que demostra la mobilització constant de l\'afició pels camps de Catalunya.',
+    image: '/assets/aficio/desplacament-olot.jpg',
     source: null
   },
   {
@@ -35,8 +81,9 @@ const AWAY_TRIPS = [
     fans: '≈250',
     highlight: 'Un dels desplaçaments habituals de la temporada.',
     detail: 'L\'afició reusenca respon setmana rere setmana als partits fora de casa a Catalunya, especialment en ciutats properes com Manresa i Terrassa.',
+    image: '/assets/aficio/desplacament-terrasaV2.jpg',
     source: null
-  },
+  }
 ];
 
 function formatDate(iso) {
@@ -50,7 +97,7 @@ export default function Fan() {
       <Seo title="Afició" description="La força que empeny el Reus FC Reddis: comunitat, desplaçaments massius i suport incondicional." />
 
       <section className={styles.hero}>
-        <img src={club.heroImages.aficio} alt="" className={styles.heroImg} />
+        <img src="/assets/hero/aficio2.jpg" alt="" className={styles.heroImg} />
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroInner}`}>
           <Badge variant="primary">Afició</Badge>
@@ -66,6 +113,17 @@ export default function Fan() {
         </p>
       </section>
 
+      <section className={`container ${styles.gallerySection}`}>
+        <SectionHeader eyebrow="Ambient" title="La marea roig-i-negra" />
+        <div className={styles.gallery}>
+          {['/assets/hero/aficio3.jpg', '/assets/hero/aficio4.jpg', '/assets/hero/aficio5.jpg', '/assets/hero/aficio6.jpg', '/assets/hero/aficio7.jpg', '/assets/hero/aficio8.jpg'].map((src, i) => (
+            <div key={i} className={styles.galleryItem}>
+              <img src={src} alt="" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className={`container ${styles.tripsSection}`}>
         <SectionHeader
           eyebrow="Desplaçaments històrics"
@@ -77,21 +135,26 @@ export default function Fan() {
         <div className={styles.tripsList}>
           {AWAY_TRIPS.map((t, i) => (
             <article key={i} className={styles.tripCard}>
-              <div className={styles.tripHead}>
-                <span className={styles.tripBadge}>vs {t.opponent}</span>
-                <time className={styles.tripDate}>{formatDate(t.date)}</time>
-              </div>
-              <h3 className={styles.tripTitle}>{t.highlight}</h3>
-              <div className={styles.tripMeta}>
-                <span>📍 {t.venue} · {t.city}</span>
-                <span className={styles.tripFans}>👥 {t.fans} aficionats</span>
-              </div>
-              <p className={styles.tripDetail}>{t.detail}</p>
-              {t.source && (
-                <a href={t.source} target="_blank" rel="noopener noreferrer" className={styles.tripSource}>
-                  Llegir notícia →
-                </a>
+              {t.image && (
+                <div className={styles.tripImgWrap}>
+                  <img src={t.image} alt="" loading="lazy" className={styles.tripImg} />
+                  <span className={styles.tripFansBadge}>👥 {t.fans}</span>
+                </div>
               )}
+              <div className={styles.tripBody}>
+                <div className={styles.tripHead}>
+                  <span className={styles.tripBadge}>vs {t.opponent}</span>
+                  <time className={styles.tripDate}>{formatDate(t.date)}</time>
+                </div>
+                <h3 className={styles.tripTitle}>{t.highlight}</h3>
+                <p className={styles.tripVenue}>📍 {t.venue} · {t.city}</p>
+                <p className={styles.tripDetail}>{t.detail}</p>
+                {t.source && (
+                  <a href={t.source} target="_blank" rel="noopener noreferrer" className={styles.tripSource}>
+                    Llegir notícia →
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>

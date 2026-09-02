@@ -114,7 +114,7 @@
       "type": "Museu",
       "area": "Plaça del Mercadal",
       "note": "Centre d'interpretació dedicat a Antoni Gaudí, nascut a Reus el 1852.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Gaudi_Centre_%28Reus%29_-_1.jpg/800px-Gaudi_Centre_%28Reus%29_-_1.jpg",
+      "image": "/assets/visitor/gaudi-centre.jpg",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gaud%C3%AD+Centre+Reus"
     },
     {
@@ -122,7 +122,7 @@
       "type": "Itinerari",
       "area": "Casc urbà",
       "note": "Casa Navàs, Casa Rull, Casa Gasull, Institut Pere Mata — més de 20 edificis.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Casa_Nav%C3%A0s_-_Reus.jpg/800px-Casa_Nav%C3%A0s_-_Reus.jpg",
+      "image": "/assets/visitor/casa_navas-reus.jpg",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+Nav%C3%A0s+Reus"
     },
     {
@@ -130,7 +130,7 @@
       "type": "Plaça major",
       "area": "Centre",
       "note": "El cor de la ciutat, envoltada d'edificis modernistes i cafès amb terrassa.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Reus_-_Pla%C3%A7a_del_Mercadal_3.JPG/800px-Reus_-_Pla%C3%A7a_del_Mercadal_3.JPG",
+      "image": "/assets/visitor/mercadal.jpg",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+del+Mercadal+Reus"
     },
     {
@@ -146,7 +146,7 @@
       "type": "Modernisme",
       "area": "Ctra. de Castellvell",
       "note": "Obra mestra de Domènech i Montaner, el 'petit palau' modernista.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Institut_Pere_Mata_-_Reus_-_Pavell%C3%B3_dels_Distingits_-_2.JPG/800px-Institut_Pere_Mata_-_Reus_-_Pavell%C3%B3_dels_Distingits_-_2.JPG",
+      "image": "/assets/visitor/institut_pere_mata.jpg",
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Institut+Pere+Mata+Reus"
     },
     {
@@ -160,7 +160,8 @@
   ],
   "vermut": {
     "title": "Reus, capital del vermut",
-    "text": "El vermut és una tradició sagrada a Reus. Al segle XIX la ciutat concentrava desenes de destil·leries i exportava a mig món. Avui encara pots visitar cellers històrics com Vermuts Miró o Yzaguirre, i celebrar la 'hora del vermut' als bars del Mercadal — un ritual social que no et pots perdre."
+    "text": "El vermut és una tradició sagrada a Reus. Al segle XIX la ciutat concentrava desenes de destil·leries i exportava a mig món. Avui encara pots visitar cellers històrics com Vermuts Miró o Yzaguirre, i celebrar la 'hora del vermut' als bars del Mercadal — un ritual social que no et pots perdre.",
+    "image": "/assets/visitor/vermut-reus.jpg"
   },
   "tips": [
     { "title": "Idioma",    "text": "Es parla català i castellà. La retolació oficial és en català." },

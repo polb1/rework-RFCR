@@ -11,14 +11,14 @@
     "address": "Carrer de Recasens i Mercadé, s/n, 43205 Reus, Tarragona",
     "postalCode": "43205",
     "province": "Tarragona",
-    "photo": "/assets/hero/stadium.webp"
+    "photo": "/assets/hero/stadium.jpg"
   },
   "competition": "Segona Federació",
   "group": "Grup 2",
   "season": "2026-27",
   "coach": "Edu Albacar",
   "heroImages": {
-    "stadium": "/assets/hero/stadium.webp",
+    "stadium": "/assets/hero/stadium.jpg",
     "aficio": "/assets/hero/aficio.webp"
   }
 }

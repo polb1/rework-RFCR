@@ -34,11 +34,11 @@ const HOME_JSONLD = {
 };
 
 const FEATURE_TILES = [
-  { to: '/equip',      label: 'Equip',      img: '/assets/hero/aficio.webp' },
-  { to: '/aficio',     label: 'Afició',     img: '/assets/hero/aficio.webp' },
-  { to: '/actualitat', label: 'Actualitat', img: '/assets/news/copa-del-rey.webp' },
-  { to: '/estadi',     label: 'Estadi',     img: '/assets/hero/stadium.webp' },
-  { to: '/historia',   label: 'Història',   img: '/assets/hero/aficio.webp' },
+  { to: '/equip',      label: 'Equip',      img: '/assets/players/xavi-molina.png' },
+  { to: '/aficio',     label: 'Afició',     img: '/assets/hero/aficio3.jpg' },
+  { to: '/actualitat', label: 'Actualitat', img: '/assets/news/Edu-Albacar-entrevista.jpg' },
+  { to: '/estadi',     label: 'Estadi',     img: '/assets/hero/stadium2.webp' },
+  { to: '/historia',   label: 'Història',   img: '/assets/history/2025-ascens-segona-rfef.jpg' },
 ];
 
 export default function Home() {
