@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install pdftotext
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+
       - name: Fetch RFEF matches
         run: node scripts/fetch-rfef.mjs
 
