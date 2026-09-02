@@ -7,6 +7,9 @@ const OUTCOME_LABEL = { win: 'V', draw: 'E', loss: 'D' };
 export default function MatchCard({ match }) {
   const outcome = resultOutcome(match);
   const played = match.status === 'played';
+  const mapUrl = match.venue
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(match.venue + ', Espanya')}`
+    : null;
 
   return (
     <article className={styles.card}>
@@ -25,6 +28,27 @@ export default function MatchCard({ match }) {
         </div>
         <Side team={match.away} align="right" />
       </div>
+
+      {match.venue && (
+        <div className={styles.foot}>
+          <svg className={styles.icon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          {mapUrl ? (
+            <a href={mapUrl} target="_blank" rel="noopener noreferrer" className={styles.venueLink}>
+              {match.venue}
+            </a>
+          ) : (
+            <span>{match.venue}</span>
+          )}
+          {!played && match.ticketsUrl && (
+            <a href={match.ticketsUrl} target="_blank" rel="noopener noreferrer" className={styles.ticketsBtn}>
+              🎟 Entrades
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }

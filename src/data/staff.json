@@ -1,10 +1,24 @@
 {
   "coach": {
     "name": "Edu Albacar",
+    "fullName": "Eduard Albacar Trilla",
     "role": "Primer entrenador",
     "nationality": "ES",
+    "birthYear": 1984,
+    "birthplace": "Camarles, Tarragona",
     "contractSince": "2026-07-01",
     "contractUntil": "2027-06-30",
-    "photo": "/assets/players/placeholder.svg"
+    "photo": "/assets/staff/edu-albacar.png",
+    "bio": [
+      "Edu Albacar (Eduard Albacar Trilla, Camarles 1984) és una figura molt vinculada al futbol català i tarragoní. Va destacar com a lateral esquerre en clubs com el Nàstic, l'Elx CF (on va ser capità i va pujar a Primera Divisió) i altres equips de LaLiga.",
+      "Un cop retirat, va iniciar la seva etapa d'entrenador. Ha dirigit equips com el Vilassar, el Deportivo Aragón i, més recentment, ha estat vinculat a projectes de futbol formatiu i primer equip a Catalunya.",
+      "L'estiu de 2026 es converteix en el nou entrenador del Reus FC Reddis. \"Quan va trucar el Reus, li vaig dir al meu representant que parés màquines\", va confessar en una entrevista al Diari de Tarragona, reflectint el seu compromís amb el projecte."
+    ],
+    "highlights": [
+      { "label": "Debut a LaLiga", "value": "2003-04 (Nàstic)" },
+      { "label": "Anys com a professional", "value": "17 temporades" },
+      { "label": "Titols com a jugador", "value": "Ascens a Primera Divisió amb l'Elx" },
+      { "label": "Al RFCR des de", "value": "Juliol 2026" }
+    ]
   }
 }

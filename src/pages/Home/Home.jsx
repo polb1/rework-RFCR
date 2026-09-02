@@ -4,6 +4,7 @@ import matches from '../../data/matches.json';
 import standings from '../../data/standings.json';
 import products from '../../data/products.json';
 import sponsors from '../../data/sponsors.json';
+import newsData from '../../data/news.json';
 import { ctas } from '../../data/navigation.js';
 
 import Button from '../../components/ui/Button/Button.jsx';
@@ -13,6 +14,7 @@ import NextMatch from '../../components/match/NextMatch/NextMatch.jsx';
 import MatchCard from '../../components/match/MatchCard/MatchCard.jsx';
 import LeagueTable from '../../components/match/LeagueTable/LeagueTable.jsx';
 import SponsorGrid from '../../components/sponsors/SponsorGrid/SponsorGrid.jsx';
+import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import Seo from '../../components/ui/Seo/Seo.jsx';
 import { formatDateShort, formatTime } from '../../utils/dates.js';
 import { useLive } from '../../hooks/useLive.js';
@@ -50,6 +52,7 @@ export default function Home() {
   const recentResults = matches.filter(m => m.status === 'played').slice(-3).reverse();
   const upcoming = matches.filter(m => m.status === 'scheduled' && new Date(m.date).getTime() >= now).slice(0, 4);
   const featuredProducts = products.slice(0, 4);
+  const latestNews = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
 
   return (
     <>
@@ -135,7 +138,14 @@ export default function Home() {
                     </div>
                     <p className={styles.calVenue}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                      {m.venue}
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.venue + ', Espanya')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.venueLink}
+                      >
+                        {m.venue}
+                      </a>
                     </p>
 
                     {m.ticketsUrl ? (
@@ -150,6 +160,18 @@ export default function Home() {
               })}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* ÚLTIMES NOTÍCIES */}
+      <section className={`container ${styles.section}`}>
+        <SectionHeader
+          eyebrow="Actualitat"
+          title="Últimes notícies"
+          action={<Button as={Link} to="/actualitat" variant="outline" size="sm">Totes les notícies</Button>}
+        />
+        <div className={styles.newsGrid}>
+          {latestNews.map(n => <NewsCard key={n.id} item={n} />)}
         </div>
       </section>
 
