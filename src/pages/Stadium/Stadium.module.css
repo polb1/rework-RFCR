@@ -1,8 +1,18 @@
 .page { padding-bottom: var(--space-16); }
 
+/* HERO — imatge millor enquadrada, més amunt perquè es vegi l'estadi */
 .hero { position: relative; height: min(60vh, 520px); overflow: hidden; background: var(--color-bg-dark); }
-.heroImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-.heroOverlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(13,13,13,0.85)); }
+.heroImg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.85;
+}
+.heroOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 40%, rgba(13,13,13,0.85) 100%);
+}
 .heroInner {
   position: relative; height: 100%;
   display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-3);
@@ -10,8 +20,9 @@
   color: var(--color-text-on-dark);
 }
 .title { font-size: clamp(var(--text-4xl), 6vw, var(--text-5xl)); color: var(--color-text-on-dark); margin: 0; text-transform: uppercase; }
-.sub { color: var(--color-text-on-dark); opacity: 0.85; }
+.sub { color: var(--color-text-on-dark); opacity: 0.9; }
 
+/* STATS */
 .stats {
   margin-top: -60px;
   position: relative; z-index: 2;
@@ -28,4 +39,99 @@
 .stats dt { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); }
 .stats dd { font-size: var(--text-2xl); font-weight: 700; margin: 0; }
 
-.body { max-width: 760px; margin-top: var(--space-12); display: flex; flex-direction: column; gap: var(--space-4); font-size: var(--text-base); line-height: 1.75; }
+/* LOCATION */
+.locationSection { margin-top: var(--space-16); }
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+@media (min-width: 900px) { .locationGrid { grid-template-columns: 1fr 1fr; } }
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+}
+.infoBlock h4 {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin: 0 0 4px;
+}
+.infoBlock p {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0;
+}
+.mapCta {
+  margin-top: var(--space-2);
+  align-self: flex-start;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--text-sm);
+  transition: filter .15s;
+}
+.mapCta:hover { filter: brightness(1.1); color: var(--color-text-on-dark); }
+
+.locationMap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  min-height: 380px;
+  box-shadow: var(--shadow-md);
+}
+.locationMap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* BODY */
+.body {
+  max-width: 760px;
+  margin-top: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: var(--text-base);
+  line-height: 1.75;
+}
+
+/* MATCHDAY */
+.matchdaySection {
+  max-width: 760px;
+  margin-top: var(--space-12);
+}
+.matchdayList {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.matchdayList li {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+.matchdayList strong { color: var(--color-primary); }

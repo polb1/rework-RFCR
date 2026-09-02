@@ -50,3 +50,84 @@
   font-size: var(--text-sm);
 }
 .socialList a:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* DESPLAÇAMENTS */
+.tripsSection { margin-top: var(--space-16); }
+.tripsIntro {
+  max-width: 780px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: var(--space-4) 0 var(--space-6);
+  font-size: var(--text-lg);
+}
+.tripsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+}
+.tripCard {
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform .15s, box-shadow .15s;
+}
+.tripCard:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.tripHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.tripBadge {
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tripDate {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tripTitle {
+  font-size: var(--text-xl);
+  line-height: 1.25;
+  margin: 0;
+  color: var(--color-text);
+}
+.tripMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.tripFans { font-weight: 600; color: var(--color-primary); }
+.tripDetail {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+.tripSource {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  margin-top: auto;
+}
+.tripSource:hover { text-decoration: underline; }

@@ -1,9 +1,52 @@
 [
-  { "year": "1922", "title": "Fundació com a FC Catalunya", "text": "Neix el club a la ciutat de Reus sota el nom FC Catalunya, iniciant una llarga tradició futbolística." },
-  { "year": "1930s", "title": "Catalunya Nova i CD Nacional", "text": "Diverses refundacions i canvis de nom marquen les primeres dècades del club a la postguerra." },
-  { "year": "2020", "title": "Naixement del projecte modern", "text": "S'articula el projecte que donarà lloc al Reus FC Reddis actual, amb l'objectiu de retornar el futbol competitiu a la ciutat." },
-  { "year": "2022", "title": "Reus FC Reddis", "text": "El club adopta el nom actual, Reus FC Reddis, reforçant la identitat roig-i-negra i el vincle amb la ciutat." },
-  { "year": "2023", "title": "Ascens a Tercera Federació", "text": "Campió de Primera Catalana el maig de 2023, l'equip aconsegueix l'ascens i retorna Reus a les categories nacionals després de quatre anys d'absència." },
-  { "year": "2025", "title": "Ascens a Segona Federació", "text": "L'abril de 2025 el club es proclama campió del seu grup i puja a Segona Federació, quart nivell del futbol espanyol." },
-  { "year": "2026", "title": "Cinc anys, cinc ascensos", "text": "El projecte roig-i-negre encadena una trajectòria de creixement esportiu i social sense precedents a la ciutat." }
+  {
+    "year": "1909",
+    "title": "Fundació del CF Reus Deportiu",
+    "text": "Tot comença l'any 1909 amb la fundació del CF Reus Deportiu. Durant més d'un segle serà el referent esportiu principal de la ciutat, formant part de la història col·lectiva de Reus."
+  },
+  {
+    "year": "1922",
+    "title": "Neix el Club Futbol Reddis",
+    "text": "L'any 1922 es fundava el Club Futbol Reddis, un club arrelat als barris de Reus amb una trajectòria basada en la proximitat, l'esforç i la formació de jugadors del territori."
+  },
+  {
+    "year": "2015-2016",
+    "title": "Etapa daurada del Reus Deportiu",
+    "text": "Sota la direcció de Natxo González, el CF Reus Deportiu assoleix l'ascens històric a Segona Divisió després d'un playoff memorable contra el Racing de Santander."
+  },
+  {
+    "year": "2016-2019",
+    "title": "Tres temporades a Segona Divisió",
+    "text": "El club competeix tres temporades entre l'elit del futbol espanyol amb un destacat 11è lloc en la primera. Un cicle que quedaria marcat en la memòria dels aficionats reusencs."
+  },
+  {
+    "year": "2020",
+    "title": "Dissolució del CF Reus Deportiu",
+    "text": "El CF Reus Deportiu es dissol per problemes econòmics i deixa la ciutat sense el seu referent futbolístic històric. Reus perd temporalment el futbol nacional."
+  },
+  {
+    "year": "2022",
+    "title": "Fusió i naixement del Reus FC Reddis",
+    "text": "El 2022 es formalitza el Reus FC Reddis, unint l'essència dels dos projectes —Reus Deportiu i Club Futbol Reddis— en un de sol. Neix així un club renovat amb la vocació de retornar el futbol a Reus."
+  },
+  {
+    "year": "2023",
+    "title": "Ascens a Tercera Federació",
+    "text": "El maig de 2023 el Reus FC Reddis es proclama campió de Primera Catalana i aconsegueix el retorn del futbol nacional a la ciutat després de quatre anys d'absència."
+  },
+  {
+    "year": "2025",
+    "title": "Ascens a Segona Federació",
+    "text": "L'abril de 2025 l'equip es proclama campió del seu grup a Tercera Federació i puja a Segona Federació (2a RFEF), quart nivell del futbol espanyol. Un pas clau en la consolidació del projecte."
+  },
+  {
+    "year": "2025",
+    "title": "El millor desplaçament de la història",
+    "text": "Prop de 1.200 aficionats es desplacen a l'Estadi Olímpic de Terrassa en el partit clau per assegurar el playoff d'ascens. Mai a la història del futbol reusenc s'havia produït un desplaçament tan massiu."
+  },
+  {
+    "year": "2026",
+    "title": "Segona temporada a 2a RFEF",
+    "text": "El Reus FC Reddis afronta la seva segona campanya a la 2a RFEF amb Edu Albacar a la banqueta, plantilla renovada de 23 jugadors i l'objectiu de consolidar el club com a referent del futbol català."
+  }
 ]

@@ -8,6 +8,9 @@
     "name": "Estadi Municipal de Reus",
     "capacity": 4700,
     "city": "Reus",
+    "address": "Carrer de Recasens i Mercadé, s/n, 43205 Reus, Tarragona",
+    "postalCode": "43205",
+    "province": "Tarragona",
     "photo": "/assets/hero/stadium.webp"
   },
   "competition": "Segona Federació",
