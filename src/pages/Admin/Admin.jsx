@@ -57,8 +57,8 @@ export default function Admin() {
         body: JSON.stringify({ token: credential, kind }),
       });
       const j = await r.json().catch(() => ({}));
-      if (!r.ok) console.error('[access-log] failed', r.status, j);
-      else console.log('[access-log]', kind, j);
+      if (!r.ok) console.error('[access-log] failed', r.status, JSON.stringify(j));
+      else console.log('[access-log]', kind, JSON.stringify(j));
     } catch (e) {
       console.error('[access-log] network error', e);
     }

@@ -56,16 +56,24 @@ async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, 
   console.log('[api/access] POST received, has token:', !!token, 'kind:', kind);
   if (!token) return res.status(400).json({ error: 'Missing token' });
 
-  // Validem que el token és realment de Google (evita spam per l'endpoint)
+  // Validem que el token és realment de Google
   let claims;
   try {
     const tr = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(token)}`);
-    if (!tr.ok) throw new Error('bad token');
-    claims = await tr.json();
-  } catch {
-    return res.status(401).json({ error: 'Google token invàlid' });
+    const txt = await tr.text();
+    if (!tr.ok) {
+      console.error('[api/access] Google tokeninfo failed', tr.status, txt.slice(0, 200));
+      return res.status(401).json({ error: 'Google token invàlid', google_status: tr.status, google_body: txt.slice(0, 200) });
+    }
+    claims = JSON.parse(txt);
+  } catch (e) {
+    console.error('[api/access] Google validation crash', e);
+    return res.status(500).json({ error: 'Google validation crash', detail: e.message });
   }
-  if (GOOGLE_CLIENT_ID && claims.aud !== GOOGLE_CLIENT_ID) return res.status(401).json({ error: 'Aud incorrecte' });
+  if (GOOGLE_CLIENT_ID && claims.aud !== GOOGLE_CLIENT_ID) {
+    console.error('[api/access] Aud mismatch. Expected', GOOGLE_CLIENT_ID, 'got', claims.aud);
+    return res.status(401).json({ error: 'Aud incorrecte', expected: GOOGLE_CLIENT_ID, got: claims.aud });
+  }
 
   const allowed = (ADMIN_EMAIL || '').split(',').map(e => e.trim().toLowerCase()).includes((claims.email || '').toLowerCase());
 
@@ -84,8 +92,8 @@ async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, 
     await appendEntry(entry, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
     console.log('[api/access] entry appended for', entry.email, 'allowed=', allowed);
   } catch (err) {
-    console.error('[api/access] appendEntry failed:', err.message);
-    return res.status(500).json({ error: err.message });
+    console.error('[api/access] appendEntry failed:', err.message, err.stack);
+    return res.status(500).json({ error: 'appendEntry failed', detail: err.message });
   }
 
   return res.status(200).json({ ok: true, allowed });
