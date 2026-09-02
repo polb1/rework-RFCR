@@ -1,26 +1,232 @@
 [
-  { "id": "p01", "slug": "guiu-escobar",   "name": "Guiu Escobar",     "shortName": "GUIU",     "number": 13, "position": "Porter",      "photo": "/assets/players/placeholder.svg", "birthYear": 2007, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Porter" },
-  { "id": "p02", "slug": "dani-parra",     "name": "Dani Parra",       "shortName": "PARRA",    "number": 1,  "position": "Porter",      "photo": "/assets/players/placeholder.svg", "birthYear": 2000, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Porter" },
-
-  { "id": "p03", "slug": "sergi-casals",   "name": "Sergi Casals",     "shortName": "CASALS",   "number": 23, "position": "Defensa",     "photo": "/assets/players/placeholder.svg", "birthYear": 1997, "nationality": "ES", "height": 181, "weight": 73, "birthplace": "Calella", "foot": "Esquerrà", "fullBirthdate": "1997-08-05", "positionDetail": "Lateral" },
-  { "id": "p04", "slug": "lluis-recasens", "name": "Lluís Recasens",   "shortName": "RECASENS", "number": 2,  "position": "Defensa",     "photo": "/assets/players/placeholder.svg", "birthYear": 2002, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Lateral" },
-  { "id": "p05", "slug": "beni",           "name": "Alberto \"Beni\" Benito", "shortName": "BENI", "number": 4, "position": "Defensa",  "photo": "/assets/players/placeholder.svg", "birthYear": 1992, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Central" },
-  { "id": "p06", "slug": "pentelei",       "name": "V. Pentelei",      "shortName": "PENTELEI", "number": 3,  "position": "Defensa",     "photo": "/assets/players/placeholder.svg", "birthYear": 2002, "nationality": "MD", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Central" },
-  { "id": "p07", "slug": "pol-fernandez",  "name": "Pol Fernández",    "shortName": "POL",      "number": 5,  "position": "Defensa",     "photo": "/assets/players/placeholder.svg", "birthYear": 2004, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Central" },
-  { "id": "p08", "slug": "marc-canteras",  "name": "Marc Canteras",    "shortName": "CANTERAS", "number": 15, "position": "Defensa",     "photo": "/assets/players/placeholder.svg", "birthYear": 2005, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Lateral" },
-
-  { "id": "p09", "slug": "andy-alarcon",   "name": "Andy Alarcón",     "shortName": "ANDY",     "number": 19, "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 2001, "nationality": "ES", "height": 185, "weight": 77, "birthplace": "Sant Carles de la Ràpita", "foot": "Dretà", "fullBirthdate": "2001-09-12", "positionDetail": "Migcampista" },
-  { "id": "p10", "slug": "sandro-toscano", "name": "Sandro Toscano",   "shortName": "SANDRO",   "number": 7,  "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 1996, "nationality": "IT", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-  { "id": "p11", "slug": "xavi-jaime",     "name": "Xavi Jaime",       "shortName": "JAIME",    "number": 10, "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 1996, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-  { "id": "p12", "slug": "rementeria",     "name": "Unai Rementería",  "shortName": "REMENTERÍA","number": 22, "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 1999, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-  { "id": "p13", "slug": "miquel-ustrell", "name": "Miquel Ustrell",   "shortName": "USTRELL",  "number": 6,  "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 2002, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-  { "id": "p14", "slug": "f-rey",          "name": "F. Rey",           "shortName": "REY",      "number": 14, "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 2000, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-  { "id": "p15", "slug": "a-gutierrez",    "name": "A. Gutiérrez",     "shortName": "GUTIÉRREZ","number": 18, "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 2006, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-  { "id": "p16", "slug": "koziello",       "name": "Vincent Koziello", "shortName": "KOZIELLO", "number": 8,  "position": "Migcampista", "photo": "/assets/players/placeholder.svg", "birthYear": 1996, "nationality": "FR", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Migcampista" },
-
-  { "id": "p17", "slug": "ricardo-vaz",    "name": "Ricardo Vaz",      "shortName": "RICARDO VAZ", "number": 10, "position": "Davanter", "photo": "/assets/players/placeholder.svg", "birthYear": 1994, "nationality": "PT", "height": 172, "weight": 67, "birthplace": "Alcabideche", "foot": "Dretà", "fullBirthdate": "1994-11-26", "positionDetail": "Extrem" },
-  { "id": "p18", "slug": "oscar-jimenez",  "name": "Óscar Jiménez",    "shortName": "ÓSCAR",    "number": 17, "position": "Davanter",    "photo": "/assets/players/placeholder.svg", "birthYear": 2002, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Davanter" },
-  { "id": "p19", "slug": "aitor-serrano",  "name": "Aitor Serrano",    "shortName": "SERRANO",  "number": 9,  "position": "Davanter",    "photo": "/assets/players/placeholder.svg", "birthYear": 1999, "nationality": "ES", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Davanter" },
-  { "id": "p20", "slug": "bruno-calcagno", "name": "Bruno Calcagno",   "shortName": "CALCAGNO", "number": 11, "position": "Davanter",    "photo": "/assets/players/placeholder.svg", "birthYear": 2005, "nationality": "UY", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Extrem" },
-  { "id": "p21", "slug": "alya-camara",    "name": "Alya Cámara",      "shortName": "CÁMARA",   "number": 21, "position": "Davanter",    "photo": "/assets/players/placeholder.svg", "birthYear": 2005, "nationality": "GN", "height": null, "weight": null, "birthplace": null, "foot": null, "fullBirthdate": null, "positionDetail": "Davanter" }
+  {
+    "id": "p01",
+    "slug": "dani-parra",
+    "name": "Daniel Parra Bove",
+    "shortName": "PARRA",
+    "number": 1,
+    "position": "Porter",
+    "photo": "/assets/players/dani-parra.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/dani-parra/"
+  },
+  {
+    "id": "p02",
+    "slug": "alberto-benito",
+    "name": "Alberto Benito Correa",
+    "shortName": "BENITO",
+    "number": 2,
+    "position": "Defensa",
+    "photo": "/assets/players/alberto-benito.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/alberto-benito/"
+  },
+  {
+    "id": "p03",
+    "slug": "polete",
+    "name": "Pol Fernandez Serra",
+    "shortName": "POLETE",
+    "number": 3,
+    "position": "Defensa",
+    "photo": "/assets/players/polete.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/polete/"
+  },
+  {
+    "id": "p04",
+    "slug": "xavi-molina",
+    "name": "Francesc Xavier Molina Arias",
+    "shortName": "XAVI MOLINA",
+    "number": 4,
+    "position": "Defensa",
+    "photo": "/assets/players/xavi-molina.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/xavi-molina/"
+  },
+  {
+    "id": "p05",
+    "slug": "lluis-recasens",
+    "name": "Lluís Recasens Vives",
+    "shortName": "RECASENS",
+    "number": 5,
+    "position": "Defensa",
+    "photo": "/assets/players/lluis-recasens.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/lluis-recasens/"
+  },
+  {
+    "id": "p06",
+    "slug": "marc-grau",
+    "name": "Marc Grau Perpinya",
+    "shortName": "MARC GRAU",
+    "number": 6,
+    "position": "Migcampista",
+    "photo": "/assets/players/marc-grau.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/marc-grau/"
+  },
+  {
+    "id": "p07",
+    "slug": "xavi-jaime",
+    "name": "Francesc Xavier Jaime Serrano",
+    "shortName": "XAVI JAIME",
+    "number": 7,
+    "position": "Migcampista",
+    "photo": "/assets/players/xavi-jaime.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/xavi-jaime/"
+  },
+  {
+    "id": "p08",
+    "slug": "ramon-folch-frigola",
+    "name": "Ramon Folch Frigola",
+    "shortName": "FOLCH",
+    "number": 8,
+    "position": "Migcampista",
+    "photo": "/assets/players/ramon-folch-frigola.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/ramon-folch-frigola/"
+  },
+  {
+    "id": "p09",
+    "slug": "josep-ramon-sarda",
+    "name": "Josep Ramon Sardà Perez",
+    "shortName": "SARDÀ",
+    "number": 9,
+    "position": "Davanter",
+    "photo": "/assets/players/josep-ramon-sarda.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/josep-ramon-sarda/"
+  },
+  {
+    "id": "p10",
+    "slug": "ricardo-vaz",
+    "name": "Ricardo Alvares Guedes Vaz",
+    "shortName": "RICARDO VAZ",
+    "number": 10,
+    "position": "Davanter",
+    "photo": "/assets/players/ricardo-vaz.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/ricardo-vaz/"
+  },
+  {
+    "id": "p11",
+    "slug": "fran-carbia",
+    "name": "Franceisco Carbia Barrera",
+    "shortName": "CARBIA",
+    "number": 11,
+    "position": "Davanter",
+    "photo": "/assets/players/fran-carbia.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/fran-carbia/"
+  },
+  {
+    "id": "p13",
+    "slug": "alvaro-pacheco",
+    "name": "Álvaro Pacheco",
+    "shortName": "PACHECO",
+    "number": 13,
+    "position": "Porter",
+    "photo": "/assets/players/alvaro-pacheco.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/alvaro-pacheco/"
+  },
+  {
+    "id": "p14",
+    "slug": "sandro-toscano",
+    "name": "Alexandro Toscano Llordal",
+    "shortName": "SANDRO",
+    "number": 14,
+    "position": "Migcampista",
+    "photo": "/assets/players/sandro-toscano.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/sandro-toscano/"
+  },
+  {
+    "id": "p15",
+    "slug": "m-cespedes",
+    "name": "Marcel Céspedes Muelas",
+    "shortName": "CÉSPEDES",
+    "number": 15,
+    "position": "Migcampista",
+    "photo": "/assets/players/m-cespedes.webp",
+    "profileUrl": "https://reusfcreddis.com/jugadors/m-cespedes/"
+  },
+  {
+    "id": "p16",
+    "slug": "lluis-estebe",
+    "name": "Lluís Estebe Blanch",
+    "shortName": "LLUÍS",
+    "number": 16,
+    "position": "Davanter",
+    "photo": "/assets/players/lluis-estebe.webp",
+    "profileUrl": "https://reusfcreddis.com/jugadors/lluis-estebe/"
+  },
+  {
+    "id": "p17",
+    "slug": "aitor-serrano",
+    "name": "Aitor Serrano Fortuny",
+    "shortName": "AITOR",
+    "number": 17,
+    "position": "Davanter",
+    "photo": "/assets/players/aitor-serrano.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/aitor-serrano/"
+  },
+  {
+    "id": "p18",
+    "slug": "kenneth-soler",
+    "name": "Kenneth Soler Fernández",
+    "shortName": "KENNETH",
+    "number": 18,
+    "position": "Davanter",
+    "photo": "/assets/players/kenneth-soler.webp",
+    "profileUrl": "https://reusfcreddis.com/jugadors/6603/"
+  },
+  {
+    "id": "p19",
+    "slug": "andy-alarcon",
+    "name": "Andy Alarcón Matamoros",
+    "shortName": "ANDY",
+    "number": 19,
+    "position": "Migcampista",
+    "photo": "/assets/players/andy-alarcon.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/andy-alarcon/"
+  },
+  {
+    "id": "p20",
+    "slug": "oscar-jimenez",
+    "name": "Óscar Jiménez",
+    "shortName": "ÓSCAR",
+    "number": 20,
+    "position": "Davanter",
+    "photo": "/assets/players/oscar-jimenez.webp",
+    "profileUrl": "https://reusfcreddis.com/jugadors/oscar-jimenez/"
+  },
+  {
+    "id": "p21",
+    "slug": "raul-melo",
+    "name": "Raúl Melo Prieto",
+    "shortName": "MELO",
+    "number": 21,
+    "position": "Davanter",
+    "photo": "/assets/players/raul-melo.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/raul-melo/"
+  },
+  {
+    "id": "p22",
+    "slug": "miquel-ustrell",
+    "name": "Miquel Ustrell Martorell",
+    "shortName": "USTRELL",
+    "number": 22,
+    "position": "Migcampista",
+    "photo": "/assets/players/miquel-ustrell.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/miquel-ustrell/"
+  },
+  {
+    "id": "p23",
+    "slug": "sergi-casals",
+    "name": "Sergi Casals Gomez",
+    "shortName": "CASALS",
+    "number": 23,
+    "position": "Defensa",
+    "photo": "/assets/players/sergi-casals.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/sergi-casals/"
+  },
+  {
+    "id": "p24",
+    "slug": "pol-fernandez",
+    "name": "Pol Fernandez Morales",
+    "shortName": "POL FDEZ",
+    "number": 24,
+    "position": "Defensa",
+    "photo": "/assets/players/pol-fernandez.png",
+    "profileUrl": "https://reusfcreddis.com/jugadors/pol-fernandez/"
+  }
 ]
