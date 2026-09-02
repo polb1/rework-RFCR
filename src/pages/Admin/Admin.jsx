@@ -49,14 +49,26 @@ export default function Admin() {
 
   const claims = token ? parseJwt(token) : null;
 
-  const handleAuth = (credential) => {
+  const logAccess = async (credential) => {
+    try {
+      const r = await fetch('/api/access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: credential }),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) console.error('[access-log] failed', r.status, j);
+      else console.log('[access-log]', j);
+    } catch (e) {
+      console.error('[access-log] network error', e);
+    }
+  };
+
+  const handleAuth = async (credential) => {
     const c = parseJwt(credential);
-    // Registre d'accés (fire-and-forget: la UI no espera al log)
-    fetch('/api/access', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: credential }),
-    }).catch(() => {});
+    // Esperem el log per garantir que arriba (si el backend està lent, els denegats
+    // desapareixerien de la UI abans que la petició sortís)
+    await logAccess(credential);
     if (!isAllowed(c)) {
       signOut();
       setError(`Compte no autoritzat: ${c?.email || 'desconegut'}`);

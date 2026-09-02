@@ -7,11 +7,22 @@ const MAX_ENTRIES = 500;
 
 export default async function handler(req, res) {
   const { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH = 'main', GOOGLE_CLIENT_ID, ADMIN_EMAIL } = process.env;
-  if (!GITHUB_TOKEN || !GITHUB_REPO) return res.status(500).json({ error: 'Config incompleta' });
+  const missing = [];
+  if (!GITHUB_TOKEN) missing.push('GITHUB_TOKEN');
+  if (!GITHUB_REPO) missing.push('GITHUB_REPO');
+  if (missing.length) {
+    console.error('[api/access] Env vars missing:', missing);
+    return res.status(500).json({ error: 'Config incompleta', missing });
+  }
 
-  if (req.method === 'GET') return handleGet(res, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
-  if (req.method === 'POST') return handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, GOOGLE_CLIENT_ID, ADMIN_EMAIL });
-  return res.status(405).json({ error: 'Method not allowed' });
+  try {
+    if (req.method === 'GET') return await handleGet(res, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
+    if (req.method === 'POST') return await handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, GOOGLE_CLIENT_ID, ADMIN_EMAIL });
+    return res.status(405).json({ error: 'Method not allowed' });
+  } catch (err) {
+    console.error('[api/access] handler crash:', err);
+    return res.status(500).json({ error: err.message });
+  }
 }
 
 async function handleGet(res, token, repo, branch) {
@@ -28,8 +39,21 @@ async function handleGet(res, token, repo, branch) {
   return res.status(200).json({ entries: entries.slice(-100).reverse() });
 }
 
+async function readBody(req) {
+  if (req.body && typeof req.body === 'object') return req.body;
+  if (typeof req.body === 'string') { try { return JSON.parse(req.body); } catch { return {}; } }
+  return await new Promise((resolve) => {
+    let raw = '';
+    req.on('data', (c) => (raw += c));
+    req.on('end', () => { try { resolve(JSON.parse(raw)); } catch { resolve({}); } });
+    req.on('error', () => resolve({}));
+  });
+}
+
 async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, GOOGLE_CLIENT_ID, ADMIN_EMAIL }) {
-  const { token } = req.body || {};
+  const body = await readBody(req);
+  const { token } = body;
+  console.log('[api/access] POST received, has token:', !!token);
   if (!token) return res.status(400).json({ error: 'Missing token' });
 
   // Validem que el token és realment de Google (evita spam per l'endpoint)
@@ -57,7 +81,9 @@ async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, 
 
   try {
     await appendEntry(entry, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
+    console.log('[api/access] entry appended for', entry.email, 'allowed=', allowed);
   } catch (err) {
+    console.error('[api/access] appendEntry failed:', err.message);
     return res.status(500).json({ error: err.message });
   }
 
