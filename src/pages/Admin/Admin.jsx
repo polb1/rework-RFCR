@@ -10,7 +10,14 @@ import HistoryEditor from './editors/HistoryEditor.jsx';
 import GenericJsonEditor from './editors/GenericJsonEditor.jsx';
 import styles from './Admin.module.css';
 
-function AuthGate({ onAuth }) {
+const ALLOWED_EMAILS = (import.meta.env.VITE_ADMIN_EMAIL || 'polboleda021@gmail.com')
+  .split(',').map(e => e.trim().toLowerCase());
+
+function isAllowed(claims) {
+  return !!claims?.email && ALLOWED_EMAILS.includes(claims.email.toLowerCase());
+}
+
+function AuthGate({ onAuth, error }) {
   const btnRef = useRef(null);
   useEffect(() => {
     if (btnRef.current) renderGoogleButton(btnRef.current, onAuth);
@@ -23,6 +30,7 @@ function AuthGate({ onAuth }) {
         <h1>Panell d'administració</h1>
         <p>Accés restringit. Inicia sessió amb el compte autoritzat.</p>
         <div ref={btnRef} />
+        {error && <p className={styles.gateError}>{error}</p>}
         <Link to="/" className={styles.gateLink}>← Torna a la web</Link>
       </div>
     </div>
@@ -30,14 +38,24 @@ function AuthGate({ onAuth }) {
 }
 
 export default function Admin() {
+  const [error, setError] = useState(null);
   const [token, setToken] = useState(() => {
     const t = getStoredToken();
-    return t && !isExpired(t) ? t : null;
+    if (!t || isExpired(t)) return null;
+    if (!isAllowed(parseJwt(t))) { setStoredToken(null); return null; }
+    return t;
   });
 
   const claims = token ? parseJwt(token) : null;
 
   const handleAuth = (credential) => {
+    const c = parseJwt(credential);
+    if (!isAllowed(c)) {
+      signOut();
+      setError(`Compte no autoritzat: ${c?.email || 'desconegut'}`);
+      return;
+    }
+    setError(null);
     setStoredToken(credential);
     setToken(credential);
   };
@@ -47,7 +65,7 @@ export default function Admin() {
     setToken(null);
   };
 
-  if (!token) return <AuthGate onAuth={handleAuth} />;
+  if (!token) return <AuthGate onAuth={handleAuth} error={error} />;
 
   return (
     <div className={styles.shell}>
