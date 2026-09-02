@@ -14,7 +14,7 @@ export const RFEF_TO_LOCAL = {
   'Girona FC "B"': 'Girona FC B',
   'Náxara CD': 'Náxara CD',
   'Peña Sport FC': 'Peña Sport FC',
-  'RCD Espanyol de Barcelona "B"': 'Espanyol B',
+  'RCD Espanyol de Barcelona "B"': 'RCD Espanyol B',
   'Reus FC Reddis': 'Reus FC Reddis',
   'SD Logroñés': 'SD Logroñés',
   'Terrassa FC': 'Terrassa FC',
