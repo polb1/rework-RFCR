@@ -29,6 +29,9 @@ function classify(commit) {
   const committerEmail = commit.commit.committer?.email || '';
   const authorName = commit.commit.author?.name || '';
 
+  // Ignora commits d'accés (es mostren en la seva pròpia secció, no com a "edicions")
+  if (/^chore\(access\)/i.test(msg) || committerEmail === 'access-bot@reusfcreddis') return null;
+
   if (/^admin:/i.test(msg)) return { source: 'admin', who: authorEmail || authorName };
   if (authorName === 'rfcr-bot' || committerEmail.includes('bot@reusfcreddis')) return { source: 'bot', who: 'Actualització automàtica RFEF' };
   if (/actualització automàtica calendari RFEF/i.test(msg)) return { source: 'bot', who: 'Actualització automàtica RFEF' };

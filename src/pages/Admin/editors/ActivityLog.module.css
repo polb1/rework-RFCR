@@ -27,6 +27,14 @@
 }
 .admin { border-left-color: #C8102E; }
 .bot { border-left-color: #22C55E; }
+.ok { border-left-color: #22C55E; }
+.deny { border-left-color: #EF4444; }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; margin: 0 0 0.25rem; text-transform: uppercase; letter-spacing: 0.06em; color: #444; }
+.sub { color: #666; font-size: 0.85rem; margin: 0 0 1rem; }
+
+.avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 
 .icon {
   display: inline-flex;
@@ -63,6 +71,8 @@
 }
 .admin .tag { background: #FEE2E2; color: #991B1B; }
 .bot .tag { background: #DCFCE7; color: #166534; }
+.ok .tag { background: #DCFCE7; color: #166534; }
+.deny .tag { background: #FEE2E2; color: #991B1B; }
 
 @media (max-width: 500px) {
   .item { grid-template-columns: 40px 1fr; }

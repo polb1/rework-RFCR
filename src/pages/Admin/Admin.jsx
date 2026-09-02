@@ -51,6 +51,12 @@ export default function Admin() {
 
   const handleAuth = (credential) => {
     const c = parseJwt(credential);
+    // Registre d'accés (fire-and-forget: la UI no espera al log)
+    fetch('/api/access', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: credential }),
+    }).catch(() => {});
     if (!isAllowed(c)) {
       signOut();
       setError(`Compte no autoritzat: ${c?.email || 'desconegut'}`);

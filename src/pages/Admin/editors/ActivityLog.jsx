@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './ActivityLog.module.css';
 
+// Data a partir de la qual comptem activitat (esborrat inicial del log).
+const START_TS = new Date('2026-09-02T12:00:00Z').getTime();
+
 const RTF = new Intl.RelativeTimeFormat('ca', { numeric: 'auto' });
 
 function relative(iso) {
@@ -19,57 +22,102 @@ function absoluteTime(iso) {
   });
 }
 
-function friendlyWho(who, source) {
-  if (source === 'bot') return who;
-  if (!who) return 'Administrador';
-  // "polboleda021@gmail.com" → "Pol Boleda"
-  const local = who.split('@')[0].replace(/\d+$/, '');
+function friendlyWho(entry) {
+  if (entry.name) return entry.name;
+  if (!entry.email) return 'Desconegut';
+  const local = entry.email.split('@')[0].replace(/\d+$/, '');
   const parts = local.split(/[._-]/).filter(Boolean);
   if (parts.length >= 2) return parts.slice(0, 2).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-  return who.split('@')[0];
+  return entry.email.split('@')[0];
 }
 
 export default function ActivityLog() {
-  const [events, setEvents] = useState(null);
+  const [edits, setEdits] = useState(null);
+  const [access, setAccess] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/api/activity')
-      .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
-      .then(j => setEvents(j.events || []))
-      .catch(e => setError(e.message));
+    Promise.all([
+      fetch('/api/activity').then(r => r.ok ? r.json() : Promise.reject(new Error('activity ' + r.status))),
+      fetch('/api/access').then(r => r.ok ? r.json() : Promise.reject(new Error('access ' + r.status))),
+    ]).then(([a, b]) => {
+      setEdits((a.events || []).filter(e => new Date(e.when).getTime() >= START_TS));
+      setAccess((b.entries || []).filter(e => new Date(e.at).getTime() >= START_TS));
+    }).catch(e => setError(e.message));
   }, []);
 
-  if (error) return <div className={styles.wrap}><h1>Activitat</h1><p className={styles.err}>Error carregant activitat: {error}</p></div>;
-  if (!events) return <div className={styles.wrap}><h1>Activitat</h1><p className={styles.loading}>Carregant…</p></div>;
+  if (error) return <Page><p className={styles.err}>Error carregant activitat: {error}</p></Page>;
+  if (edits === null || access === null) return <Page><p className={styles.loading}>Carregant…</p></Page>;
 
+  return (
+    <Page>
+      <Section title="Accessos" subtitle="Intents d'entrada al panell d'administració (permesos i denegats).">
+        {access.length === 0 && <p className={styles.empty}>Encara no hi ha accessos registrats.</p>}
+        <ol className={styles.list}>
+          {access.map((a, i) => (
+            <li key={i} className={`${styles.item} ${a.allowed ? styles.ok : styles.deny}`}>
+              {a.picture
+                ? <img src={a.picture} alt="" className={styles.avatar} />
+                : <span className={styles.icon} aria-hidden="true">{a.allowed ? '✅' : '⛔'}</span>}
+              <div className={styles.body}>
+                <p className={styles.line}>
+                  <strong>{friendlyWho(a)}</strong>
+                  <span className={styles.sep}> · </span>
+                  <span className={styles.who}>{a.email}</span>
+                </p>
+                <p className={styles.time} title={absoluteTime(a.at)}>
+                  {relative(a.at)} <span className={styles.abs}>· {absoluteTime(a.at)}{a.ip ? ` · IP ${a.ip}` : ''}</span>
+                </p>
+              </div>
+              <span className={styles.tag}>{a.allowed ? 'Entra' : 'Denegat'}</span>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section title="Edicions" subtitle="Canvis fets al panell i pel robot automàtic RFEF.">
+        {edits.length === 0 && <p className={styles.empty}>Encara no s'ha editat res.</p>}
+        <ol className={styles.list}>
+          {edits.map(e => (
+            <li key={e.sha} className={`${styles.item} ${e.source === 'bot' ? styles.bot : styles.admin}`}>
+              <span className={styles.icon} aria-hidden="true">{e.icon}</span>
+              <div className={styles.body}>
+                <p className={styles.line}>
+                  <strong>{e.label}</strong>
+                  <span className={styles.sep}> · </span>
+                  <span className={styles.who}>{friendlyWho({ email: e.who, name: e.source === 'bot' ? e.who : null })}</span>
+                </p>
+                <p className={styles.time} title={absoluteTime(e.when)}>
+                  {relative(e.when)} <span className={styles.abs}>· {absoluteTime(e.when)}</span>
+                </p>
+              </div>
+              <span className={styles.tag}>{e.source === 'bot' ? 'Automàtic' : 'Manual'}</span>
+            </li>
+          ))}
+        </ol>
+      </Section>
+    </Page>
+  );
+}
+
+function Page({ children }) {
   return (
     <div className={styles.wrap}>
       <header className={styles.head}>
-        <h1>Activitat recent</h1>
-        <p>Últims canvis fets al panell d'administració i pel robot automàtic.</p>
+        <h1>Activitat</h1>
+        <p>Registre d'accessos i canvis a la web.</p>
       </header>
-
-      {events.length === 0 && <p className={styles.empty}>Encara no hi ha activitat registrada.</p>}
-
-      <ol className={styles.list}>
-        {events.map(e => (
-          <li key={e.sha} className={`${styles.item} ${e.source === 'bot' ? styles.bot : styles.admin}`}>
-            <span className={styles.icon} aria-hidden="true">{e.icon}</span>
-            <div className={styles.body}>
-              <p className={styles.line}>
-                <strong>{e.label}</strong>
-                <span className={styles.sep}> · </span>
-                <span className={styles.who}>{friendlyWho(e.who, e.source)}</span>
-              </p>
-              <p className={styles.time} title={absoluteTime(e.when)}>
-                {relative(e.when)} <span className={styles.abs}>· {absoluteTime(e.when)}</span>
-              </p>
-            </div>
-            <span className={styles.tag}>{e.source === 'bot' ? 'Automàtic' : 'Manual'}</span>
-          </li>
-        ))}
-      </ol>
+      {children}
     </div>
+  );
+}
+
+function Section({ title, subtitle, children }) {
+  return (
+    <section className={styles.section}>
+      <h2>{title}</h2>
+      {subtitle && <p className={styles.sub}>{subtitle}</p>}
+      {children}
+    </section>
   );
 }
