@@ -15,6 +15,8 @@ import LeagueTable from '../../components/match/LeagueTable/LeagueTable.jsx';
 import SponsorGrid from '../../components/sponsors/SponsorGrid/SponsorGrid.jsx';
 import Seo from '../../components/ui/Seo/Seo.jsx';
 import { formatDateShort, formatTime } from '../../utils/dates.js';
+import { useLive } from '../../hooks/useLive.js';
+import { mergeStandings } from '../../data/rfefTeamMap.js';
 
 import styles from './Home.module.css';
 
@@ -38,6 +40,10 @@ const FEATURE_TILES = [
 ];
 
 export default function Home() {
+  const live = useLive('/api/rfef');
+  const liveStandings = live.data?.standings?.length
+    ? mergeStandings(live.data.standings, standings)
+    : standings;
   const now = Date.now();
   const nextMatch = matches.find(m => m.status === 'scheduled' && new Date(m.date).getTime() >= now)
     || matches.find(m => m.status === 'scheduled');
@@ -83,7 +89,7 @@ export default function Home() {
               title={club.group}
               action={<Button as={Link} to="/classificacio" variant="outline" size="sm">Taula completa</Button>}
             />
-            <LeagueTable rows={standings} compact />
+            <LeagueTable rows={liveStandings} compact />
           </div>
         </div>
       </section>
