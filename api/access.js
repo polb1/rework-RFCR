@@ -52,8 +52,8 @@ async function readBody(req) {
 
 async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, GOOGLE_CLIENT_ID, ADMIN_EMAIL }) {
   const body = await readBody(req);
-  const { token } = body;
-  console.log('[api/access] POST received, has token:', !!token);
+  const { token, kind } = body;
+  console.log('[api/access] POST received, has token:', !!token, 'kind:', kind);
   if (!token) return res.status(400).json({ error: 'Missing token' });
 
   // Validem que el token és realment de Google (evita spam per l'endpoint)
@@ -74,6 +74,7 @@ async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, 
     name: claims.name || null,
     picture: claims.picture || null,
     allowed,
+    kind: kind || 'login-attempt',
     ip: req.headers['x-forwarded-for']?.split(',')[0]?.trim() || null,
     ua: req.headers['user-agent'] || null,
     at: new Date().toISOString(),

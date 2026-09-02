@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link, NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import { getStoredToken, setStoredToken, parseJwt, isExpired, renderGoogleButton, signOut } from '../../lib/auth.js';
 import NewsEditor from './editors/NewsEditor.jsx';
@@ -49,26 +49,34 @@ export default function Admin() {
 
   const claims = token ? parseJwt(token) : null;
 
-  const logAccess = async (credential) => {
+  const logAccess = useCallback(async (credential, kind) => {
     try {
       const r = await fetch('/api/access', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: credential }),
+        body: JSON.stringify({ token: credential, kind }),
       });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) console.error('[access-log] failed', r.status, j);
-      else console.log('[access-log]', j);
+      else console.log('[access-log]', kind, j);
     } catch (e) {
       console.error('[access-log] network error', e);
     }
-  };
+  }, []);
+
+  // Cada vegada que s'obre /admin amb sessió vàlida (fresca o reanudada),
+  // registrem l'accés — un cop per càrrega de pàgina.
+  const loggedRef = useRef(false);
+  useEffect(() => {
+    if (!token || loggedRef.current) return;
+    loggedRef.current = true;
+    logAccess(token, 'session-open');
+  }, [token, logAccess]);
 
   const handleAuth = async (credential) => {
+    console.log('[admin] Google callback fired');
     const c = parseJwt(credential);
-    // Esperem el log per garantir que arriba (si el backend està lent, els denegats
-    // desapareixerien de la UI abans que la petició sortís)
-    await logAccess(credential);
+    await logAccess(credential, 'login-attempt');
     if (!isAllowed(c)) {
       signOut();
       setError(`Compte no autoritzat: ${c?.email || 'desconegut'}`);

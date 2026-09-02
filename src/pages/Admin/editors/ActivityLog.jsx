@@ -69,7 +69,11 @@ export default function ActivityLog() {
                   {relative(a.at)} <span className={styles.abs}>· {absoluteTime(a.at)}{a.ip ? ` · IP ${a.ip}` : ''}</span>
                 </p>
               </div>
-              <span className={styles.tag}>{a.allowed ? 'Entra' : 'Denegat'}</span>
+              <span className={styles.tag}>
+                {a.allowed
+                  ? (a.kind === 'session-open' ? 'Sessió' : 'Entra')
+                  : 'Denegat'}
+              </span>
             </li>
           ))}
         </ol>
