@@ -9,6 +9,7 @@ import News from './pages/News/News.jsx';
 import NewsDetail from './pages/NewsDetail/NewsDetail.jsx';
 import Team from './pages/Team/Team.jsx';
 import PlayerDetail from './pages/PlayerDetail/PlayerDetail.jsx';
+import MatchDetail from './pages/MatchDetail/MatchDetail.jsx';
 import Stadium from './pages/Stadium/Stadium.jsx';
 import History from './pages/History/History.jsx';
 import Board from './pages/Board/Board.jsx';
@@ -34,6 +35,7 @@ export const router = createBrowserRouter([
       { path: '/calendari', element: <Calendar /> },
       { path: '/resultats', element: <Results /> },
       { path: '/classificacio', element: <Standings /> },
+      { path: '/partit/:id', element: <MatchDetail /> },
       { path: '/actualitat', element: <News /> },
       { path: '/actualitat/:slug', element: <NewsDetail /> },
       { path: '/equip', element: <Team /> },

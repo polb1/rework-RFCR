@@ -16,6 +16,8 @@ import LeagueTable from '../../components/match/LeagueTable/LeagueTable.jsx';
 import SponsorGrid from '../../components/sponsors/SponsorGrid/SponsorGrid.jsx';
 import NewsCard from '../../components/news/NewsCard/NewsCard.jsx';
 import Seo from '../../components/ui/Seo/Seo.jsx';
+import CtaTriple from '../../components/ui/CtaTriple/CtaTriple.jsx';
+import InstagramTeaser from '../../components/social/InstagramTeaser/InstagramTeaser.jsx';
 import { formatDateShort, formatTime } from '../../utils/dates.js';
 import { useLive } from '../../hooks/useLive.js';
 import { mergeStandings } from '../../data/rfefTeamMap.js';
@@ -72,6 +74,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <CtaTriple />
 
       {/* COM ESTEM */}
       <section className={`container ${styles.section}`}>
@@ -215,6 +219,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <InstagramTeaser />
 
       {/* PATROCINADORS */}
       <section className={`container ${styles.section}`}>

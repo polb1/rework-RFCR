@@ -19,7 +19,20 @@ export default function PlayerDetail() {
 
   return (
     <main className={styles.page}>
-      <Seo title={p.name} description={`${p.name} · Dorsal ${p.number} · ${p.position} del Reus FC Reddis temporada ${club.season}.`} />
+      <Seo
+        title={p.name}
+        description={`${p.name} · Dorsal ${p.number} · ${p.position} del Reus FC Reddis temporada ${club.season}.`}
+        image={p.photo}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: p.name,
+          image: p.photo,
+          jobTitle: p.position,
+          affiliation: { '@type': 'SportsTeam', name: 'Reus FC Reddis' },
+          nationality: p.nationality || undefined,
+        }}
+      />
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.photoBox}>

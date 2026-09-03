@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Badge from '../../ui/Badge/Badge.jsx';
 import { formatDateShort, formatTime, resultOutcome } from '../../../utils/dates.js';
 import styles from './MatchCard.module.css';
@@ -13,6 +14,7 @@ export default function MatchCard({ match }) {
 
   return (
     <article className={styles.card}>
+      <Link to={`/partit/${match.id}`} className={styles.cardLink} aria-label={`Detall del partit ${match.home.name} vs ${match.away.name}`} />
       <div className={styles.head}>
         <span className={styles.matchday}>J{match.matchday}</span>
         <span className={styles.date}>{formatDateShort(match.date)}</span>
