@@ -48,4 +48,18 @@
   --shadow-xl: 0 20px 25px rgba(0,0,0,0.12);
 
   --container-max: 1200px;
+
+  /* Card system unificat (Fase 2.3) */
+  --card-padding-y: 1.75rem;
+  --card-padding-x: 1.5rem;
+  --card-padding-y-lg: 2rem;
+  --card-padding-x-lg: 1.75rem;
+  --card-gap: var(--space-4);
+  --card-radius: var(--radius-lg);
+  --card-border: 1px solid var(--color-border);
+  --card-shadow-hover: 0 12px 32px rgba(0,0,0,0.12);
+
+  /* Estats esportius */
+  --sport-live: #ef4444;
+  --sport-live-bg: rgba(239, 68, 68, 0.12);
 }

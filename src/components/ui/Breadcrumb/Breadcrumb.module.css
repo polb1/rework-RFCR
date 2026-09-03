@@ -1,0 +1,28 @@
+.nav {
+  padding-block: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+.item { display: inline-flex; align-items: center; gap: var(--space-2); }
+.item a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color .15s;
+}
+.item a:hover { color: var(--color-primary); }
+.item [aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 700;
+}
+.sep { color: var(--color-border); }
