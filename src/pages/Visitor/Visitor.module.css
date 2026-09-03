@@ -163,20 +163,20 @@
 
 /* Body */
 .body {
-  padding: var(--space-8) var(--space-6);
+  padding: 2rem 1.75rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
   flex: 1;
 }
 @media (min-width: 640px) {
-  .body { padding: var(--space-8); }
+  .body { padding: 2.25rem 2rem; }
 }
 .head {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: var(--space-3);
+  gap: var(--space-4);
   flex-wrap: wrap;
   margin-bottom: var(--space-2);
 }

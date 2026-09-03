@@ -66,15 +66,15 @@
 }
 .calCard {
   display: flex; flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-5);
+  gap: var(--space-4);
+  padding: 1.75rem 1.5rem;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: transform .15s, box-shadow .15s, border-color .15s;
   min-height: 360px;
 }
-@media (min-width: 640px) { .calCard { padding: var(--space-6); } }
+@media (min-width: 640px) { .calCard { padding: 2rem; } }
 .calCard:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--color-primary); }
 
 .calHead {
