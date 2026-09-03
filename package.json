@@ -6,7 +6,7 @@
   "engines": { "node": "22.x" },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/gen-sitemap.mjs",
+    "prebuild": "node scripts/gen-sitemap.mjs && node scripts/gen-feed.mjs",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"

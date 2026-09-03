@@ -2,6 +2,7 @@ import matches from '../../data/matches.json';
 import club from '../../data/club.json';
 import MatchCard from '../../components/match/MatchCard/MatchCard.jsx';
 import Badge from '../../components/ui/Badge/Badge.jsx';
+import RecentForm from '../../components/match/RecentForm/RecentForm.jsx';
 import { resultOutcome } from '../../utils/dates.js';
 import styles from './Results.module.css';
 
@@ -29,6 +30,10 @@ export default function Results() {
         <Stat label="Victòries" value={totals.win} tone="win" />
         <Stat label="Empats" value={totals.draw} tone="draw" />
         <Stat label="Derrotes" value={totals.loss} tone="loss" />
+      </div>
+
+      <div className={styles.form}>
+        <RecentForm matches={matches} count={5} label="Últims 5 partits" />
       </div>
 
       {played.length === 0
