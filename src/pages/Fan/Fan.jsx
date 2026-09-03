@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import club from '../../data/club.json';
 import { social, ctas } from '../../data/navigation.js';
 import Badge from '../../components/ui/Badge/Badge.jsx';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
 import Seo from '../../components/ui/Seo/Seo.jsx';
+import Lightbox from '../../components/ui/Lightbox/Lightbox.jsx';
 import styles from './Fan.module.css';
 
 const AWAY_TRIPS = [
@@ -92,8 +94,10 @@ function formatDate(iso) {
 }
 
 export default function Fan() {
+  const [lightbox, setLightbox] = useState(null);
   return (
     <main className={styles.page}>
+      <Lightbox src={lightbox} onClose={() => setLightbox(null)} />
       <Seo title="Afició" description="La força que empeny el Reus FC Reddis: comunitat, desplaçaments massius i suport incondicional." />
 
       <section className={styles.hero}>
@@ -117,9 +121,10 @@ export default function Fan() {
         <SectionHeader eyebrow="Ambient" title="La marea roig-i-negra" />
         <div className={styles.gallery}>
           {['/assets/hero/aficio3.jpg', '/assets/hero/aficio4.jpg', '/assets/hero/aficio5.jpg', '/assets/hero/aficio6.jpg', '/assets/hero/aficio7.jpg', '/assets/hero/aficio8.jpg'].map((src, i) => (
-            <div key={i} className={styles.galleryItem}>
+            <button key={i} type="button" className={styles.galleryItem} onClick={() => setLightbox(src)} aria-label="Ampliar imatge">
               <img src={src} alt="" loading="lazy" />
-            </div>
+              <span className={styles.galleryZoom} aria-hidden="true">🔍</span>
+            </button>
           ))}
         </div>
       </section>
@@ -136,10 +141,10 @@ export default function Fan() {
           {AWAY_TRIPS.map((t, i) => (
             <article key={i} className={styles.tripCard}>
               {t.image && (
-                <div className={styles.tripImgWrap}>
+                <button type="button" className={styles.tripImgWrap} onClick={() => setLightbox(t.image)} aria-label={`Ampliar imatge desplaçament ${t.opponent}`}>
                   <img src={t.image} alt="" loading="lazy" className={styles.tripImg} />
                   <span className={styles.tripFansBadge}>👥 {t.fans}</span>
-                </div>
+                </button>
               )}
               <div className={styles.tripBody}>
                 <div className={styles.tripHead}>
