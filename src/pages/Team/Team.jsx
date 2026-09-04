@@ -4,7 +4,7 @@ import club from '../../data/club.json';
 import SectionHeader from '../../components/ui/SectionHeader/SectionHeader.jsx';
 import Badge from '../../components/ui/Badge/Badge.jsx';
 import Seo from '../../components/ui/Seo/Seo.jsx';
-import CircularGallery from '../../components/gallery/CircularGallery.jsx';
+// import CircularGallery from '../../components/gallery/CircularGallery.jsx';
 import PlayerCarousel from '../../components/team/PlayerCarousel/PlayerCarousel.jsx';
 import styles from './Team.module.css';
 
