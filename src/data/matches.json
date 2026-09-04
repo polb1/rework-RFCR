@@ -13,7 +13,7 @@
     },
     "away": {
       "name": "CA Osasuna B",
-      "shortName": "OSB",
+      "shortName": "CA Osasuna B",
       "badge": "/assets/badges/osasuna.png"
     },
     "homeScore": null,
@@ -30,7 +30,7 @@
     "isHome": false,
     "home": {
       "name": "CD Ebro",
-      "shortName": "EBR",
+      "shortName": "CD Ebro",
       "badge": "/assets/badges/ebro.webp"
     },
     "away": {
@@ -56,7 +56,7 @@
     },
     "away": {
       "name": "Náxara CD",
-      "shortName": "NAX",
+      "shortName": "Náxara CD",
       "badge": "/assets/badges/naxara.webp"
     },
     "homeScore": null,
@@ -73,7 +73,7 @@
     "isHome": false,
     "home": {
       "name": "Utebo FC",
-      "shortName": "UTE",
+      "shortName": "Utebo FC",
       "badge": "/assets/badges/utebo.webp"
     },
     "away": {
@@ -99,7 +99,7 @@
     },
     "away": {
       "name": "CE Manresa",
-      "shortName": "MAN",
+      "shortName": "CE Manresa",
       "badge": "/assets/badges/manresa.png"
     },
     "homeScore": null,
@@ -116,7 +116,7 @@
     "isHome": false,
     "home": {
       "name": "CD Tudelano",
-      "shortName": "TUD",
+      "shortName": "CD Tudelano",
       "badge": "/assets/badges/tudelano.png"
     },
     "away": {
@@ -142,7 +142,7 @@
     },
     "away": {
       "name": "RCD Espanyol B",
-      "shortName": "ESB",
+      "shortName": "RCD Espanyol B",
       "badge": "/assets/badges/espanyol.png"
     },
     "homeScore": null,
@@ -159,7 +159,7 @@
     "isHome": false,
     "home": {
       "name": "Peña Sport FC",
-      "shortName": "PEN",
+      "shortName": "Peña Sport FC",
       "badge": "/assets/badges/penya-sport.png"
     },
     "away": {
@@ -180,7 +180,7 @@
     "isHome": false,
     "home": {
       "name": "Terrassa FC",
-      "shortName": "TER",
+      "shortName": "Terrassa FC",
       "badge": "/assets/badges/terrassa.png"
     },
     "away": {
@@ -206,7 +206,7 @@
     },
     "away": {
       "name": "UD Logroñés B",
-      "shortName": "UDL",
+      "shortName": "UD Logroñés B",
       "badge": "/assets/badges/ud-logrones.png"
     },
     "homeScore": null,
@@ -223,7 +223,7 @@
     "isHome": false,
     "home": {
       "name": "CF Calamocha",
-      "shortName": "CAL",
+      "shortName": "CF Calamocha",
       "badge": "/assets/badges/calamocha.webp"
     },
     "away": {
@@ -249,7 +249,7 @@
     },
     "away": {
       "name": "UE Olot",
-      "shortName": "OLO",
+      "shortName": "UE Olot",
       "badge": "/assets/badges/olot.webp"
     },
     "homeScore": null,
@@ -266,7 +266,7 @@
     "isHome": false,
     "home": {
       "name": "CD Arnedo",
-      "shortName": "ARN",
+      "shortName": "CD Arnedo",
       "badge": "/assets/badges/arnedo.webp"
     },
     "away": {
@@ -292,7 +292,7 @@
     },
     "away": {
       "name": "UD Barbastro",
-      "shortName": "BAR2",
+      "shortName": "UD Barbastro",
       "badge": "/assets/badges/barbastro.png"
     },
     "homeScore": null,
@@ -309,7 +309,7 @@
     "isHome": false,
     "home": {
       "name": "Barça Atlètic",
-      "shortName": "BAR",
+      "shortName": "Barça Atlètic",
       "badge": "/assets/badges/barca.png"
     },
     "away": {
@@ -330,7 +330,7 @@
     "isHome": false,
     "home": {
       "name": "Girona FC B",
-      "shortName": "GIB",
+      "shortName": "Girona FC B",
       "badge": "/assets/badges/girona.png"
     },
     "away": {
@@ -356,7 +356,7 @@
     },
     "away": {
       "name": "SD Logroñés",
-      "shortName": "SDL",
+      "shortName": "SD Logroñés",
       "badge": "/assets/badges/sd-logrones.png"
     },
     "homeScore": null,
@@ -373,7 +373,7 @@
     "isHome": false,
     "home": {
       "name": "CA Osasuna B",
-      "shortName": "OSB",
+      "shortName": "CA Osasuna B",
       "badge": "/assets/badges/osasuna.png"
     },
     "away": {
@@ -399,7 +399,7 @@
     },
     "away": {
       "name": "CF Calamocha",
-      "shortName": "CAL",
+      "shortName": "CF Calamocha",
       "badge": "/assets/badges/calamocha.webp"
     },
     "homeScore": null,
@@ -416,7 +416,7 @@
     "isHome": false,
     "home": {
       "name": "CE Manresa",
-      "shortName": "MAN",
+      "shortName": "CE Manresa",
       "badge": "/assets/badges/manresa.png"
     },
     "away": {
@@ -442,7 +442,7 @@
     },
     "away": {
       "name": "Terrassa FC",
-      "shortName": "TER",
+      "shortName": "Terrassa FC",
       "badge": "/assets/badges/terrassa.png"
     },
     "homeScore": null,
@@ -459,7 +459,7 @@
     "isHome": false,
     "home": {
       "name": "UD Logroñés B",
-      "shortName": "UDL",
+      "shortName": "UD Logroñés B",
       "badge": "/assets/badges/ud-logrones.png"
     },
     "away": {
@@ -485,7 +485,7 @@
     },
     "away": {
       "name": "Barça Atlètic",
-      "shortName": "BAR",
+      "shortName": "Barça Atlètic",
       "badge": "/assets/badges/barca.png"
     },
     "homeScore": null,
@@ -507,7 +507,7 @@
     },
     "away": {
       "name": "Peña Sport FC",
-      "shortName": "PEN",
+      "shortName": "Peña Sport FC",
       "badge": "/assets/badges/penya-sport.png"
     },
     "homeScore": null,
@@ -524,7 +524,7 @@
     "isHome": false,
     "home": {
       "name": "Náxara CD",
-      "shortName": "NAX",
+      "shortName": "Náxara CD",
       "badge": "/assets/badges/naxara.webp"
     },
     "away": {

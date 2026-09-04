@@ -37,7 +37,7 @@ const HORARIOS_LIST = 'https://rfef.es/es/noticias/labor-federativa/horarios?bas
 
 const SHORTS = {
   'CD Arnedo':'ARN','CD Ebro':'EBR','CD Tudelano':'TUD','CE Manresa':'MAN',
-  'CF Calamocha':'CAL','CA Osasuna B':'OSB','Barça Atlètic':'BAR',
+  'CF Calamocha':'CAL','CA Osasuna B':'OSBD','Barça Atlètic':'BAR',
   'Girona FC B':'GIB','Náxara CD':'NAX','Peña Sport FC':'PEN',
   'RCD Espanyol B':'ESB','Reus FC Reddis':'RFCR','SD Logroñés':'SDL',
   'Terrassa FC':'TER','UD Barbastro':'BAR2','UD Logroñés B':'UDL',

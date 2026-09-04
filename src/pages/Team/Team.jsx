@@ -77,7 +77,7 @@ export default function Team() {
         <p className={styles.sub}>Temporada {club.season} · {players.length} jugadors</p>
       </div>
 
-      <section className={styles.gallerySection} aria-label="Galeria de la plantilla">
+      {/* <section className={styles.gallerySection} aria-label="Galeria de la plantilla">
         <CircularGallery
           items={players.map(p => ({ image: p.photo, text: `${p.number} · ${p.name}` }))}
           bend={2.5}
@@ -88,7 +88,7 @@ export default function Team() {
           scrollSpeed={2.2}
         />
         <p className={styles.galleryHint}>Arrossega o gira la roda per navegar per la plantilla</p>
-      </section>
+      </section> */}
 
       <main className={`container ${styles.groupsWrap}`}>
         {/* COS TÈCNIC — hero de l'entrenador */}
