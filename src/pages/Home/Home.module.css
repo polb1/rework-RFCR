@@ -92,7 +92,7 @@
   width: 34px; height: 34px;
   display: grid; place-items: center;
   border-radius: 50%;
-  background: #eef4ff;
+  background: var(--color-surface);
   color: #4a90ff;
 }
 .calComp svg { width: 20px; height: 20px; }

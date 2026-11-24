@@ -54,7 +54,7 @@ export default function Home() {
   const recentResults = matches.filter(m => m.status === 'played').slice(-3).reverse();
   const upcoming = matches.filter(m => m.status === 'scheduled' && new Date(m.date).getTime() >= now).slice(0, 4);
   const featuredProducts = products.slice(0, 4);
-  const latestNews = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+  const latestNews = newsData.toSorted((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
 
   return (
     <>

@@ -9,6 +9,7 @@
     "prebuild": "node scripts/gen-sitemap.mjs && node scripts/gen-feed.mjs",
     "build": "vite build",
     "lint": "oxlint",
+    "test": "node --test tests/*.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

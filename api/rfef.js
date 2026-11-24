@@ -17,7 +17,8 @@ const UA        = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
 const BASE = 'https://marcadores.rfef.es/pnfg';
 
 export default async function handler(req, res) {
-  const jornada = parseInt(req.query.jornada || '1', 10);
+  const jornada = Number(req.query.jornada || 1);
+  if (!Number.isInteger(jornada) || jornada < 1 || jornada > 38) return res.status(400).json({ error: 'Invalid jornada' });
   const url = `${BASE}/NPcd/NFG_VisClasificacion?cod_primaria=${PRIMARIA}&codjornada=${jornada}&codgrupo=${GROUP_ID}&codcompeticion=${COMP_ID}`;
 
   let html = '';

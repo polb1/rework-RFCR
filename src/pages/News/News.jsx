@@ -15,7 +15,7 @@ export default function News() {
   }, []);
 
   const sorted = useMemo(
-    () => [...news].sort((a, b) => new Date(b.date) - new Date(a.date)),
+    () => news.toSorted((a, b) => new Date(b.date) - new Date(a.date)),
     []
   );
 

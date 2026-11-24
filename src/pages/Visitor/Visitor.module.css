@@ -137,7 +137,7 @@
 .imgWrap {
   position: relative;
   aspect-ratio: 3 / 2;
-  background: linear-gradient(135deg, var(--color-surface), #e5e7eb);
+  background: linear-gradient(135deg, var(--color-surface), var(--color-border));
   overflow: hidden;
 }
 .img {

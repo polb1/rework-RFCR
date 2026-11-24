@@ -6,7 +6,7 @@ import Badge from '../../components/ui/Badge/Badge.jsx';
 import styles from './Calendar.module.css';
 
 export default function Calendar() {
-  const sorted = [...matches].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const sorted = matches.toSorted((a, b) => new Date(a.date) - new Date(b.date));
   const upcoming = sorted.filter(m => m.status !== 'played');
   const played = sorted.filter(m => m.status === 'played').reverse();
 
