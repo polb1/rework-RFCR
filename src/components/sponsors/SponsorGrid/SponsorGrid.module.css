@@ -47,7 +47,7 @@
   height: 100px;
   transition: background .15s, transform .15s;
 }
-.link:hover { background: #eaeaea; transform: translateY(-2px); }
+.link:hover { background: var(--color-border); transform: translateY(-2px); }
 
 .logo {
   max-width: 100%;

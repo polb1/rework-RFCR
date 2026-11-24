@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './ActivityLog.module.css';
+import { getStoredToken } from '../../../lib/auth.js';
 
 // Data a partir de la qual comptem activitat (esborrat inicial del log).
 const START_TS = new Date('2026-09-02T12:00:00Z').getTime();
@@ -39,7 +40,7 @@ export default function ActivityLog() {
   useEffect(() => {
     Promise.all([
       fetch('/api/activity').then(r => r.ok ? r.json() : Promise.reject(new Error('activity ' + r.status))),
-      fetch('/api/access').then(r => r.ok ? r.json() : Promise.reject(new Error('access ' + r.status))),
+      fetch('/api/access', { headers: { Authorization: `Bearer ${getStoredToken()}` } }).then(r => r.ok ? r.json() : Promise.reject(new Error('access ' + r.status))),
     ]).then(([a, b]) => {
       setEdits((a.events || []).filter(e => new Date(e.when).getTime() >= START_TS));
       setAccess((b.entries || []).filter(e => new Date(e.at).getTime() >= START_TS));

@@ -1,28 +1,56 @@
 // Log d'accessos al panell d'administració.
-// POST: registra un intent d'accés (permès o denegat) a data/access-log.json del repo.
-// GET:  retorna els últims 100 intents (públic — cap dada sensible més enllà del correu).
+// POST: registra un accés d'un administrador a src/data/access-log.json del repo.
+// GET:  retorna els últims 100 accessos (només per a administradors).
+// El repo és públic: mai guardem dades de persones que no són admins (ni IP ni navegador).
 
 const LOG_PATH = 'src/data/access-log.json';
 const MAX_ENTRIES = 500;
 
 export default async function handler(req, res) {
   const { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH = 'main', GOOGLE_CLIENT_ID, ADMIN_EMAIL } = process.env;
-  const missing = [];
-  if (!GITHUB_TOKEN) missing.push('GITHUB_TOKEN');
-  if (!GITHUB_REPO) missing.push('GITHUB_REPO');
-  if (missing.length) {
-    console.error('[api/access] Env vars missing:', missing);
-    return res.status(500).json({ error: 'Config incompleta', missing });
+  if (!GITHUB_TOKEN || !GITHUB_REPO || !GOOGLE_CLIENT_ID || !ADMIN_EMAIL) {
+    console.error('[api/access] Server not configured');
+    return res.status(500).json({ error: 'Server not configured' });
+  }
+  if (req.method !== 'GET' && req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
+    const body = req.method === 'POST' ? await readBody(req) : {};
+    const token = req.method === 'GET'
+      ? (req.headers.authorization || '').replace(/^Bearer\s+/i, '')
+      : body.token;
+    const admin = await verifyAdmin(token, GOOGLE_CLIENT_ID, ADMIN_EMAIL);
+    if (!admin) return res.status(403).json({ error: 'Not authorized' });
+
     if (req.method === 'GET') return await handleGet(res, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
-    if (req.method === 'POST') return await handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, GOOGLE_CLIENT_ID, ADMIN_EMAIL });
-    return res.status(405).json({ error: 'Method not allowed' });
+
+    await appendEntry({
+      email: admin.email,
+      name: admin.name || null,
+      picture: admin.picture || null,
+      allowed: true,
+      kind: body.kind || 'login',
+      at: new Date().toISOString(),
+    }, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
+    return res.status(200).json({ ok: true, allowed: true });
   } catch (err) {
     console.error('[api/access] handler crash:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal error' });
   }
+}
+
+// Retorna les claims del token si és d'un admin; si no, null.
+async function verifyAdmin(token, clientId, adminEmail) {
+  if (!token) return null;
+  const r = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(token)}`);
+  if (!r.ok) return null;
+  const claims = await r.json();
+  if (claims.aud !== clientId) return null;
+  if (claims.email_verified !== 'true' && claims.email_verified !== true) return null;
+  const allowed = adminEmail.split(',').map(e => e.trim().toLowerCase());
+  return allowed.includes((claims.email || '').toLowerCase()) ? claims : null;
 }
 
 async function handleGet(res, token, repo, branch) {
@@ -30,12 +58,11 @@ async function handleGet(res, token, repo, branch) {
   const r = await fetch(url, {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'User-Agent': 'rfcr-access' },
   });
+  res.setHeader('Cache-Control', 'no-store');
   if (!r.ok) return res.status(200).json({ entries: [] });
   const j = await r.json();
-  const content = Buffer.from(j.content, 'base64').toString('utf8');
   let entries;
-  try { entries = JSON.parse(content); } catch { entries = []; }
-  res.setHeader('Cache-Control', 'no-store');
+  try { entries = JSON.parse(Buffer.from(j.content, 'base64').toString('utf8')); } catch { entries = []; }
   return res.status(200).json({ entries: entries.slice(-100).reverse() });
 }
 
@@ -48,55 +75,6 @@ async function readBody(req) {
     req.on('end', () => { try { resolve(JSON.parse(raw)); } catch { resolve({}); } });
     req.on('error', () => resolve({}));
   });
-}
-
-async function handlePost(req, res, { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH, GOOGLE_CLIENT_ID, ADMIN_EMAIL }) {
-  const body = await readBody(req);
-  const { token, kind } = body;
-  console.log('[api/access] POST received, has token:', !!token, 'kind:', kind);
-  if (!token) return res.status(400).json({ error: 'Missing token' });
-
-  // Validem que el token és realment de Google
-  let claims;
-  try {
-    const tr = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(token)}`);
-    const txt = await tr.text();
-    if (!tr.ok) {
-      console.error('[api/access] Google tokeninfo failed', tr.status, txt.slice(0, 200));
-      return res.status(401).json({ error: 'Google token invàlid', google_status: tr.status, google_body: txt.slice(0, 200) });
-    }
-    claims = JSON.parse(txt);
-  } catch (e) {
-    console.error('[api/access] Google validation crash', e);
-    return res.status(500).json({ error: 'Google validation crash', detail: e.message });
-  }
-  if (GOOGLE_CLIENT_ID && claims.aud !== GOOGLE_CLIENT_ID) {
-    console.error('[api/access] Aud mismatch. Expected', GOOGLE_CLIENT_ID, 'got', claims.aud);
-    return res.status(401).json({ error: 'Aud incorrecte', expected: GOOGLE_CLIENT_ID, got: claims.aud });
-  }
-
-  const allowed = (ADMIN_EMAIL || '').split(',').map(e => e.trim().toLowerCase()).includes((claims.email || '').toLowerCase());
-
-  const entry = {
-    email: claims.email || 'desconegut',
-    name: claims.name || null,
-    picture: claims.picture || null,
-    allowed,
-    kind: kind || 'login-attempt',
-    ip: req.headers['x-forwarded-for']?.split(',')[0]?.trim() || null,
-    ua: req.headers['user-agent'] || null,
-    at: new Date().toISOString(),
-  };
-
-  try {
-    await appendEntry(entry, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH);
-    console.log('[api/access] entry appended for', entry.email, 'allowed=', allowed);
-  } catch (err) {
-    console.error('[api/access] appendEntry failed:', err.message, err.stack);
-    return res.status(500).json({ error: 'appendEntry failed', detail: err.message });
-  }
-
-  return res.status(200).json({ ok: true, allowed });
 }
 
 async function appendEntry(entry, token, repo, branch) {
@@ -118,7 +96,7 @@ async function appendEntry(entry, token, repo, branch) {
     if (entries.length > MAX_ENTRIES) entries = entries.slice(-MAX_ENTRIES);
 
     const body = {
-      message: `chore(access): ${entry.allowed ? 'entra' : 'denegat'} ${entry.email}`,
+      message: `chore(access): entra ${entry.email}`,
       content: Buffer.from(JSON.stringify(entries, null, 2) + '\n', 'utf8').toString('base64'),
       branch,
       committer: { name: 'RFCR Access', email: 'access-bot@reusfcreddis' },
